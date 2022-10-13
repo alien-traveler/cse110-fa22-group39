@@ -7,15 +7,15 @@ This is a kickoff meeting, so that all group members will start working on thing
 
 ## Attendance
 - [x] Will
-- [ ] Vladimir
-- [ ] Harry
-- [ ] Jacky
-- [ ] Justin
-- [ ] Logan
-- [ ] Mingyi
-- [ ] Randi
-- [ ] Ryan
-- [ ] Tanya
+- [x] Vladimir
+- [x] Harry
+- [x] Jacky
+- [x] Justin
+- [x] Logan
+- [x] Mingyi
+- [x] Randi
+- [x] Ryan
+- [x] Tanya
 
 ## Agenda
 - Group Repo Walkthrough
@@ -24,7 +24,12 @@ This is a kickoff meeting, so that all group members will start working on thing
 - Team Intro Video
 - Group Contract
 
-## Things to Address
+## Things Discussed
+1. Team topic (coffee shop, notes sharing)
+2. Team name discussion (Apollo)
 
-
-## Conclusion
+## To be Done
+1. Team video: Tanya + Logan
+2. Team logo: Mingyi + Vladimir
+3. Team Page: Mingyi
+4. Everybody sends self-introduction to Slack
