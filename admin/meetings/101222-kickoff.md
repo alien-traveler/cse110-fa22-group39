@@ -32,4 +32,5 @@ This is a kickoff meeting, so that all group members will start working on thing
 1. Team video: Tanya + Logan
 2. Team logo: Mingyi + Vladimir
 3. Team Page: Mingyi
-4. Everybody sends self-introduction to Slack
+4. Group Contract: Vladimir
+5. Everybody sends self-introduction to Slack
