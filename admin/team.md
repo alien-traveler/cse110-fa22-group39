@@ -113,6 +113,16 @@ We will make a **Coffee Ordering** web app that allows students to select coffee
         <h2>&emsp;<a href="https://github.com/Noctrn">Vladimir Em</a></h2>
         <p>&nbsp; My name is Vladimir Em. 
         <br/> &nbsp; I like writing in Swift. I am good in UI and UX as well as any game development.
-        <br/> &nbsp; Hobbies: Drifting, Racing and DYI projects. </p>
+        <br/> &nbsp; Hobbies: Drifting, Racing and DYI projects. <br/> &nbsp; </p>
+    </div>
+</div>
+
+<div>
+    <img style="float: left;" src="page/randi.png" width="100" height="120" />
+    <div>
+        <h2>&emsp;<a href="https://github.com/RandiLi">Randi Li</a></h2>
+        <p>&nbsp; My name is Randy Li. 
+        <br/> &nbsp; My favorite programming language is Java. 
+        <br/> &nbsp; I like solving problems through trial and error. My hobbies include movies, puzzles, and gaming. <br/> &nbsp; </p>
     </div>
 </div>
