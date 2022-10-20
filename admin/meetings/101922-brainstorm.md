@@ -18,8 +18,11 @@ All group members begin to brainstorm the details of our Coffee Shop Project
 - [ ] Tanya
 
 ## Agenda
-- 
-- Schedule for another brainstorm meeting (by requirement of 2-hour total)
+- Clarifying definitions and requirements
+- Thinking about users and their expectations
+- Deciding on your app's theme or mood
+- "Survey your competition"
+- Schedule another brainstorm meeting (by requirement of 2-hour total)
 
 ## Things Discussed
 1. Use Miro to draw out a diagram of how the app will work
