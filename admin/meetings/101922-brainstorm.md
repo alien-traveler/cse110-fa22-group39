@@ -6,16 +6,16 @@ Group Meeting - Brainstorm
 All group members begin to brainstorm the details of our Coffee Shop Project
 
 ## Attendance
-- [ ] Will
-- [ ] Vladimir
-- [ ] Harry
-- [ ] Jacky
-- [ ] Justin
-- [ ] Logan
-- [ ] Mingyi
-- [ ] Randi
-- [ ] Ryan
-- [ ] Tanya
+- [x] Will
+- [x] Vladimir
+- [x] Harry
+- [x] Jacky
+- [x] Justin
+- [x] Logan
+- [x] Mingyi
+- [x] Randi
+- [x] Ryan
+- [x] Tanya
 
 ## Agenda
 - Clarifying definitions and requirements
