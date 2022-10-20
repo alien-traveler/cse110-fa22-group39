@@ -3,7 +3,7 @@
 Group Meeting - Brainstorm
 
 ## Meeting Goal:
-All group members begin to brainstorm the details of our Coffee Shop Project
+All group members brainstorm the details of our Coffee Shop Project
 
 ## Attendance
 - [x] Will
@@ -26,7 +26,8 @@ All group members begin to brainstorm the details of our Coffee Shop Project
 
 ## Things Discussed
 1. Use Miro to draw out a diagram of how the app will work
-2. Deciding the flow of the app from users' perspective
-3. 
+2. Deciding the flow&features of the app from users' perspective
+3. Scheduled another meeting on Zoom at 4pm Saturday
 
 ## To be Done
+1. More details of the project to be done.
