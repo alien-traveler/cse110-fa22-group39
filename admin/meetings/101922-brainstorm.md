@@ -22,12 +22,8 @@ All group members begin to brainstorm the details of our Coffee Shop Project
 - Schedule for another brainstorm meeting (by requirement of 2-hour total)
 
 ## Things Discussed
-1. Team topic brainstorm (coffee shop, notes sharing), and we decided to make a coffee ordering app
-2. Team name discussion (Apollo)
+1. Use Miro to draw out a diagram of how the app will work
+2. Deciding the flow of the app from users' perspective
+3. 
 
 ## To be Done
-1. Team video: Tanya + Logan
-2. Team logo: Mingyi + Vladimir
-3. Team Page: Mingyi
-4. Group Contract: Vladimir
-5. Everybody sends self-introduction to Slack
