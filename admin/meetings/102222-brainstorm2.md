@@ -40,7 +40,7 @@ All group members continue brainstorming the details of our Coffee Shop Project 
    - Is there a hard decision we should settle in advance so it doesn’t trip up the team?
 
 ## To be Done
-1. Pitch Requirement
+1. [Pitch Requirement](https://docs.google.com/document/d/1LF4NpXGQUJC90t-SIQGa2LHOEYkbGk_7KShogXaqtNU/edit?usp=sharing)
     - Rules and rabbit holes (Randi)
         - Does this require new technical work we’ve never done before?
         - Are we making assumptions about how the parts fit together?
@@ -52,5 +52,6 @@ All group members continue brainstorming the details of our Coffee Shop Project 
     - Statement of purpose (Logan, Jacky)
     - User personas (mingyi, tanya)
 2. Vladimir, Harry, Ryan - ADRs
-3. What tech can we use for this proj?
-4. New Google Doc - Pitch
+3. Read through [Shapeup](https://basecamp.com/shapeup)
+4. What tech can we use for this proj?
+5. New Google Doc - Pitch
