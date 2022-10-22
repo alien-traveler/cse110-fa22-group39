@@ -7,14 +7,14 @@ All group members continue brainstorming the details of our Coffee Shop Project 
 
 ## Attendance
 - [x] Will
-- [x] Vladimir
-- [x] Harry
+- [ ] Vladimir
+- [ ] Harry
 - [x] Jacky
 - [x] Justin
 - [x] Logan
 - [x] Mingyi
 - [x] Randi
-- [x] Ryan
+- [ ] Ryan
 - [x] Tanya
 
 ## Agenda
@@ -29,7 +29,28 @@ All group members continue brainstorming the details of our Coffee Shop Project 
     - Read through: Internal Documentation: [ADR (Architectural Decision Records)](https://adr.github.io/madr/)
 
 ## Things Discussed
-1. 
+1. Currently no more new features
+2. Read chpt 5 & 6
+3. High-fidelity wireframe prototype - buttons can click, more details
+4. User personas - How different users experience
+5. Risks and Rabbit holes 
+   - Does this require new technical work we’ve never done before?
+   - Are we making assumptions about how the parts fit together?
+   - Are we assuming a design solution exists that we couldn’t come up with ourselves?
+   - Is there a hard decision we should settle in advance so it doesn’t trip up the team?
 
 ## To be Done
-1. 
+1. Pitch Requirement
+    - Rules and rabbit holes (Randi)
+        - Does this require new technical work we’ve never done before?
+        - Are we making assumptions about how the parts fit together?
+        - Are we assuming a design solution exists that we couldn’t come up with ourselves?
+        - Is there a hard decision we should settle in advance so it doesn’t trip up the team?
+    - Visualization (mingyi, tanya)
+        - System diagrams
+        - Wireframe
+    - Statement of purpose (Logan, Jacky)
+    - User personas (mingyi, tanya)
+2. Vladimir, Harry, Ryan - ADRs
+3. What tech can we use for this proj?
+4. New Google Doc - Pitch
