@@ -1,6 +1,6 @@
 # CSE 110 Group 39 Meeting Minutes
 ## Meeting Type:
-Group kickoff meeting
+Group Meeting - Kickoff
 
 ## Meeting Goal:
 This is a kickoff meeting, so that all group members will start working on things.
@@ -25,7 +25,7 @@ This is a kickoff meeting, so that all group members will start working on thing
 - Group Contract
 
 ## Things Discussed
-1. Team topic (coffee shop, notes sharing)
+1. Team topic brainstorm (coffee shop, notes sharing), and we decided to make a coffee ordering app
 2. Team name discussion (Apollo)
 
 ## To be Done
