@@ -4,21 +4,34 @@
   <meta charset="UTF-8">
   <title>Customize_recipes</title>
   <link rel="icon" type="image/x-icon" href="../images/favicon.png">
-  <link rel="stylesheet" href="../CustomizeRecipe/customize.css">
+  <link rel="stylesheet" href="customize.css">
   <link rel="stylesheet" href="../common.css">
   <script src="./script.js"></script>
 </head>
 
 <body>
-  <h1>Edit the Preset</h1>
-  <form id="presetForm">
+  <h1>Time to Customize!</h1>
+  <form id="customizeForm">
     <div class="container">
       <div class="item">
-        <input type="radio" id="HotCoffee" name="CoffeeType" value="Hot">
-        <label for="HotCoffee" id="Hot"> Hot Coffee </label>
+        <div class="recipeName">
+          <label for="recipeName"> Recipe Name </label>
+        </div>
       </div>
       <div class="item">
-        <input type="radio" id="ColdCoffee" name="CoffeeType" value="Cold">
+        <div class="recipeNameInput">
+          <input name="recipeName" id="name" required />
+        </div>
+      </div>
+      <div class="item">
+        <div class="coffeeType">
+          <label for="coffeeType"> Coffee Type </label>
+        </div>
+      </div>
+      <div class="item">
+        <input type="radio" id="HotCoffee" name="CoffeeType" value="Hot Coffee">
+        <label for="HotCoffee" id="Hot"> Hot Coffee </label>
+        <input type="radio" id="ColdCoffee" name="CoffeeType" value="Cold Coffee">
         <label for="ColdCoffee" id="Cold"> Cold Coffee </label>
       </div>
       <div class="item">
@@ -39,7 +52,7 @@
         </div>
       </div>
       <div class="item">
-        <select name="ChooseSize" id="SizeName">
+        <select name="ChooseSize" id="SizeName" required>
           <option hidden disabled selected value></option>
           <option value="S">S</option>
           <option value="M">M</option>
@@ -58,7 +71,6 @@
           <input type="checkbox" id="Topping" name="Sugar" value="Sugar">
           <label for="Sugar">Sugar </label>
         </div>
-
         <div class="ExtraShort">
           <input type="checkbox" id="Topping" name="ExtraShort" value="Sugar">
           <label for="ExtraShort">Extra short </label>
@@ -75,13 +87,14 @@
           <input type="checkbox" id="Topping" name="Water" value="Water">
           <label for="Water">Water</label>
         </div>
+
       </div>
     </div>
   </form>
 
   <div id="content" style="float: right;">
     <button class="button">Save and Continue</button>
-  </div>
+    <!-- <button class="button">Saved Recipes</button> -->
   </div>
 </body>
 
