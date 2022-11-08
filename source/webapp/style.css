@@ -6,13 +6,13 @@
     margin-left:100px;
     margin-right:5px;
     margin-top:50px;
-}.button{
+}
+
+.button{
     width: 300px;
-    background-color: #573D06
-;
+    background-color: #573D06;
     border: none;
-    color: #FFFBF3
-;
+    color: #FFFBF3;
     display: flex;
     text-align: center;
     vertical-align: middle;
@@ -21,8 +21,9 @@
     margin: 5px 10px;
     padding: 20px 20px 20px 60px;
     cursor: pointer;
-}.button:hover{
-    background-color: #B38D22
-;
+}
+  
+.button:hover{
+    background-color: #b38d22;
     color:black;
 }
