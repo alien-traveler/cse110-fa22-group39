@@ -20,22 +20,3 @@ body {
     margin-top:50px;
 }
 
-.button{
-  width: 300px;
-  background-color: #573d06;
-  border: none;
-  color: #fffbf3;
-  display: flex;
-  text-align: center;
-  vertical-align: middle;
-  text-decoration: none;
-  font-size: 20px;
-  margin: 5px 10px;
-  padding: 20px 20px 20px 60px;
-  cursor: pointer;
-}
-
-.button:hover{
-    background-color: #b38d22;
-    color:black;
-}
