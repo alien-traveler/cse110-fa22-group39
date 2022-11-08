@@ -1,0 +1,54 @@
+.button{
+    width: 300px;
+    background-color: #fffbf3;
+    border: none;
+    color: #573d06;
+    display: flex;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: 20px;
+    margin: 5px 10px;
+    padding: 20px 20px 20px 60px;
+    cursor: pointer;
+  }
+  
+  .button:hover{
+      background-color: #b38d22;
+      color:black;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+  
+  .row {
+    display: flex;
+  }
+  
+  /* Create two equal columns that sits next to each other */
+  .column {
+    flex: 70%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+  }
+
+div{
+    float: right;
+    width: 600px;
+    background-color: #573d06;
+    color: #fffbf3;
+    display: flex;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: 20px;
+    margin: 5px 10px;
+    padding: 20px 60px 20px 60px;
+}
+
+#page-title{
+    background-color: #fffbf3;
+    color: #573d06;
+}
+
