@@ -7,6 +7,19 @@
   <link rel="stylesheet" href="saved-recipe-style.css">
   <link rel="stylesheet" href="common.css">
   <script src="./script.js"></script>
+  <!-- <script>
+  var chk1 = $('#HotCoffee');
+  var chk2 = $('#ColdCoffee');
+
+//check the other box
+chk1.on('click', function(){
+  if( chk1.is(':checked') ) {
+    chk2.attr('checked', true);
+  } else {
+    chk2.attr('checked', false);
+  }
+});
+  </script> -->
 </head>
 
 <body>
@@ -28,9 +41,9 @@
           </div>
     </div>
     <div class="item">
-      <input type="checkbox" id="HotCoffee" name="Hot Coffee" value="Hot Coffee">
+      <input type="radio" id="HotCoffee" name="coffee" value="HotCoffee">
       <label for="HotCoffee" id="Hot"> Hot Coffee </label>
-      <input type="checkbox" id="ColdCoffee" name="Cold Coffee" value="Cold Coffee">
+      <input type="radio" id="ColdCoffee" name="coffee" value="ColdCoffee">
       <label for="ColdCoffee" id="Cold"> Cold Coffee </label>
     </div>
     <div class="item">
@@ -102,7 +115,6 @@
   <div id="content" style="float: right;">
     <button class="button">Save and Continue</button>
     <!-- <button class="button">Saved Recipes</button> -->
-  </div>
-</body>
-
+    </div>
+  </body>
 </html>
