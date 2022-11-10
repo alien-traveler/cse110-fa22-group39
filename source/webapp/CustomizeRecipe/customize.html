@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Customize_recipes</title>
+  <link rel="icon" type="image/x-icon" href="../images/favicon.png">
+  <link rel="stylesheet" href="customize.css">
+  <link rel="stylesheet" href="../common.css">
+  <script src="./script.js"></script>
+</head>
+
+<body>
+  <h1>Time to Customize!</h1>
+  <form id="customizeForm">
+    <div class="container">
+      <div class="item">
+        <div class="recipeName">
+          <label for="recipeName"> Recipe Name </label>
+        </div>
+      </div>
+      <div class="item">
+        <div class="recipeNameInput">
+          <input name="recipeName" id="name" required />
+        </div>
+      </div>
+      <div class="item">
+        <div class="coffeeType">
+          <label for="coffeeType"> Coffee Type </label>
+        </div>
+      </div>
+      <div class="item">
+        <input type="radio" id="HotCoffee" name="CoffeeType" value="Hot Coffee">
+        <label for="HotCoffee" id="Hot"> Hot Coffee </label>
+        <input type="radio" id="ColdCoffee" name="CoffeeType" value="Cold Coffee">
+        <label for="ColdCoffee" id="Cold"> Cold Coffee </label>
+      </div>
+      <div class="item">
+        <div class="chooseDrink">
+          <label for="chooseDrink"> Choose Your Drink </label>
+        </div>
+      </div>
+      <div class="item">
+        <select name="ChooseDrinks" id="DrinksName" required>
+          <option value="Cappuccinos">Cappuccinos</option>
+          <option value="Latte">Latte</option>
+          <option value="Espresso">Espresso</option>
+        </select>
+      </div>
+      <div class="item">
+        <div class="size">
+          <label for="size"> Size </label>
+        </div>
+      </div>
+      <div class="item">
+        <select name="ChooseSize" id="SizeName" required>
+          <option hidden disabled selected value></option>
+          <option value="S">S</option>
+          <option value="M">M</option>
+          <option value="L">L</option>
+        </select>
+      </div>
+      <div class="addOn">
+        <label for="addOn"> Add-Ons</label>
+      </div>
+      <div class="addOns">
+        <div class="Caramel">
+          <input type="checkbox" id="Topping" name="Caramel" value="Caramel" />
+          <label for="Caramel"> Caramel</label>
+        </div>
+        <div class="Sugar">
+          <input type="checkbox" id="Topping" name="Sugar" value="Sugar">
+          <label for="Sugar">Sugar </label>
+        </div>
+        <div class="ExtraShort">
+          <input type="checkbox" id="Topping" name="ExtraShort" value="Sugar">
+          <label for="ExtraShort">Extra short </label>
+        </div>
+        <div class=Milk>
+          <input type="checkbox" id="Topping" name="Milk" value="Milk">
+          <label for="Milk">Milk </label>
+        </div>
+        <div class=Cream>
+          <input type="checkbox" id="Topping" name="Cream" value="Cream">
+          <label for="Cream">Cream </label>
+        </div>
+        <div class=Water>
+          <input type="checkbox" id="Topping" name="Water" value="Water">
+          <label for="Water">Water</label>
+        </div>
+
+      </div>
+    </div>
+  </form>
+
+  <div id="content" style="float: right;">
+    <button class="button">Save and Continue</button>
+    <!-- <button class="button">Saved Recipes</button> -->
+  </div>
+</body>
+
+</html>
