@@ -1,4 +1,7 @@
 window.addEventListener('DOMContentLoaded', init);
+window.onload = function(){
+    this.loadHome();
+}
 
 function init(){
     let firstButtonEl = document.querySelectorAll("button")[0];
