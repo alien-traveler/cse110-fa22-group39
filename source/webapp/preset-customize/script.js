@@ -1,4 +1,7 @@
 window.addEventListener('DOMContentLoaded', init);
+window.onload = function(){
+    this.loadHome();
+}
 
 function init(){
     let leftButtonEl = document.querySelectorAll("button")[0];

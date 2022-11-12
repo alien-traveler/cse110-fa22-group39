@@ -7,3 +7,14 @@ html *{
 body {
     background-color: #fffbf3;
 }
+
+#home{
+    margin-left: 50%;
+}
+
+.asText {
+    background:#fffbf3;
+    border:none;
+    margin:0;
+    padding:0;
+}
