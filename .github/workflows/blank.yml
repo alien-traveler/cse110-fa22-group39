@@ -36,6 +36,6 @@ jobs:
       - name: Build
         uses: andstor/jsdoc-action@v1
         with:
-          source_dir: ./source/webapp
+          source_dir: cse110-fa22-group39/source/webapp/
           recurse: true
-          output_dir: ./specs/documentation
+          output_dir: cse110-fa22-group39/specs/documentation
