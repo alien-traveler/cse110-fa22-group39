@@ -10,3 +10,4 @@ function init(){
         window.location = "../CustomizeRecipe/customize.html";
     })
 }
+

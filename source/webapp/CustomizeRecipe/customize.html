@@ -29,7 +29,7 @@
         </div>
       </div>
       <div class="item">
-        <input type="radio" id="HotCoffee" name="CoffeeType" value="Hot Coffee">
+        <input type="radio" id="HotCoffee" name="CoffeeType" value="Hot Coffee" required>
         <label for="HotCoffee" id="Hot"> Hot Coffee </label>
         <input type="radio" id="ColdCoffee" name="CoffeeType" value="Cold Coffee">
         <label for="ColdCoffee" id="Cold"> Cold Coffee </label>
@@ -41,6 +41,7 @@
       </div>
       <div class="item">
         <select name="ChooseDrinks" id="DrinksName" required>
+          <option hidden disabled selected value></option>
           <option value="Cappuccinos">Cappuccinos</option>
           <option value="Latte">Latte</option>
           <option value="Espresso">Espresso</option>
@@ -72,7 +73,7 @@
           <label for="Sugar">Sugar </label>
         </div>
         <div class="ExtraShort">
-          <input type="checkbox" id="Topping" name="ExtraShort" value="Sugar">
+          <input type="checkbox" id="Topping" name="ExtraShort" value="ExtraShort">
           <label for="ExtraShort">Extra short </label>
         </div>
         <div class=Milk>
@@ -87,13 +88,13 @@
           <input type="checkbox" id="Topping" name="Water" value="Water">
           <label for="Water">Water</label>
         </div>
-
+        <input class = "button" type="submit" value="Save and Continue">
       </div>
     </div>
   </form>
 
   <div id="content" style="float: right;">
-    <button class="button">Save and Continue</button>
+    <!-- <button class="button">Save and Continue</button> -->
     <!-- <button class="button">Saved Recipes</button> -->
   </div>
 </body>
