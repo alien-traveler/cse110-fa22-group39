@@ -53,7 +53,7 @@ function init() {
         // "size" : Index from  1: "S"
         //                      2: "M"
         //                      3: "L"
-        // "addOn" : Index array of all included add-ons:
+        // "addOns" : Index array of all included add-ons:
         //                      0: "Caramel"
         //                      1: "Sugar"
         //                      2: "Extra Short"
@@ -66,6 +66,7 @@ function init() {
             "drinkType" :  drinkName.selectedIndex,
             "size" : drinkSize.selectedIndex,
             "addOns" : addOnArr
+
         };
 
         // Store to localStorage with key 'custom'
