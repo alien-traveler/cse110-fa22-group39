@@ -24,7 +24,7 @@ function init() {
         drinkName.selectedIndex = preset["drinkType"];
         drinkSize.selectedIndex = preset["size"];
 
-        const presetAdd = preset["addOn"];
+        const presetAdd = preset["addOns"];
         for(let i=0; i<presetAdd.length; i++) {
             addOn[presetAdd[i]].checked = true;
         }
@@ -65,7 +65,7 @@ function init() {
             "coffeeType" : (coffeeType[0].checked) ? "Hot" : "Cold",
             "drinkType" :  drinkName.selectedIndex,
             "size" : drinkSize.selectedIndex,
-            "addOn" : addOnArr
+            "addOns" : addOnArr
         };
 
         // Store to localStorage with key 'custom'
