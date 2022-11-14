@@ -32,4 +32,10 @@ jobs:
       # Run JSDoc
       - name: JSDoc Action
         uses: andstor/jsdoc-action@v1.2.1
-
+      
+      - name: Build
+        uses: andstor/jsdoc-action@v1
+        with:
+          source_dir: ./source/webapp
+          recurse: true
+          output_dir: ./specs/documentation
