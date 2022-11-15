@@ -1,7 +1,9 @@
 # Agile - Retrospective
-Conclusion from the first sprint. Opinions are from all group members. 
 
-## 1. Liked items: anything appreciated in the sprint or that made the sprint successful 
+Conclusion from the first sprint. Opinions are from all group members.
+
+## 1. Liked items: anything appreciated in the sprint or that made the sprint successful
+
 Most people like how our team works. Because of our great communication in backend and frontend team, and active participation of group members and leaders, we have finished most of the front-end and backend coding within the first sprint (about a wekk and half). Also by splitting the work to everyone so the whole team can contribute, as well as the leaders would ask about the progress and make sure everyone is on track, we can get our work done in an efficient way. By performing such great teamwork, we also got some good practices like making pull request and git branches and deepened the understanding of front-end design and completed the writing of front-end code within the task.
 
 ## 2. Lacked items: things that potentially could have brought the team closer to success 
@@ -12,4 +14,5 @@ A lot of lessons learned during the first sprint. First, we gained a deeper unde
 What's more, set up an overall project structure would be helpful in teamwork such as assigning each person by pages or specific tasks. Lastly, it is not enough to only write functioning code, you also have to make it understandable to other people. 
 
 ## 4. Longed for items: things the team desires for success or morale.
-From the coding perspective, we will keep consistent in coding styles and re-direction logic, and we can discuss how to optimize the front-end UI design and some animation effects. We will also finish the remaining portion ASAP. From the team perspective, we need more discussions about logic and structure, and most importantly, we need more communication among team members. Every team member must be more engaged and self-motivated. 
+
+From the coding perspective, we will keep consistent in coding styles and re-direction logic, and we can discuss how to optimize the front-end UI design and some animation effects. We will also finish the remaining portion ASAP. From the team perspective, we need more discussions about logic and structure, and most importantly, we need more communication among team members. Every team member must be more engaged and self-motivated.
