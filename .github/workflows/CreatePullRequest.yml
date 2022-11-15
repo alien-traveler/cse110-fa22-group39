@@ -1,0 +1,19 @@
+name: Update Main branch
+on:
+  push:
+    branches:
+      - main
+jobs:
+  updateAuthors:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Update AUTHORS
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          commit-message: update main branch by CI
+          title: Update by CI
+          
