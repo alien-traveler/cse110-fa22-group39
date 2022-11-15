@@ -1,15 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hello, World</title>
-</head>
+  <!DOCTYPE html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Saved Recipes</title>
+    <link rel="icon" type="image/x-icon" href="../images/favicon.png">
+    <link rel="stylesheet" href="../common.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="../common.js"></script>
+    <script src="script.js"></script>
+  </head>
 
 <body>
-  My first Web dev code
+  <p id="home"></p>
+  <input type="text" id="input" onkeyup="lookUp()" placeholder="Search recipes...">
+  <table style="width:100%">
+    <tr>
+      <td style="width:60%">
+          <div class="tableEl" id="page-title">
+              All Saved Recipies
+          </div>
+      </td>
+    </tr>
+  </table>
 </body>
 
 </html>
