@@ -22,7 +22,7 @@ function addRecipesToDocument(recipes) {
     var tbl = document.querySelector("table");
     for (var i = 0; i < recipes.length; i++) {
       tbl.insertRow(-1).innerHTML = `<td><div>${recipes[i].recipeName}</div></td>
-      <td><button class="button" id="recipe1">View/Edit</button></td>`
+      <td><button class="button" id="recipe${i}">View/Edit</button></td>`
     }
 }
 

@@ -1,40 +1,24 @@
 .button{
-    width: 300px;
-    background-color: #fffbf3;
-    border: none;
-    color: #573d06;
-    display: flex;
-    text-align: center;
-    vertical-align: middle;
-    text-decoration: none;
-    font-size: 20px;
-    margin: 5px 10px;
-    padding: 20px 20px 20px 60px;
-    cursor: pointer;
-  }
-  
-  .button:hover{
-      background-color: #b38d22;
-      color:black;
-  }
+  width: 300px;
+  background-color: #fffbf3;
+  border: none;
+  color: #573d06;
+  display: flex;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  font-size: 20px;
+  margin: 5px 10px;
+  padding: 20px 20px 20px 60px;
+  cursor: pointer;
+}
 
-  * {
-    box-sizing: border-box;
-  }
-  
-  .row {
-    display: flex;
-  }
-  
-  /* Create two equal columns that sits next to each other */
-  .column {
-    flex: 70%;
-    padding: 10px;
-    height: 300px; /* Should be removed. Only for demonstration */
-  }
+.button:hover{
+    background-color: #b38d22;
+    color:black;
+}
 
 div{
-    float: right;
     width: 600px;
     background-color: #573d06;
     color: #fffbf3;
@@ -60,7 +44,7 @@ div{
   width: 80x; /* Full-width */
   font-size: 16px; /* Increase font-size */
   padding: 12px 20px 12px 40px; /* Add some padding */
-  border: 1px solid #573d06; /* Add a grey border */
+  border: none;/*1px solid #573d06; Add a grey border */
   margin-left: 80%;
 }
 
