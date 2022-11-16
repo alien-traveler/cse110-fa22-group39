@@ -2,7 +2,6 @@
     box-sizing: border-box;
 }
 
-/* Create two equal columns that floats next to each other */
 .column {
     float: left;
     width: 50%;
@@ -10,7 +9,6 @@
     margin-left: auto;
 }
   
-/* Clear floats after the columns */
 .row:after {
     content: "";
     display: table;
@@ -29,16 +27,14 @@
     width: 150px;
     height: 50px;
     background-color: #573d06;
-    border: none;
     border-radius: 30px;
     color: #fffbf3;
-    display: flex;
+    border: none;
     text-align: center;
     vertical-align: middle;
-    text-decoration: none;
     font-size: 15px;
-    margin: 10px 220px;
-    padding: 7px 20px 10px 40px;
+    margin: 10px 210px;
+    /* padding: 7px 20px 10px 40px; */
     cursor: pointer;
 }
   
