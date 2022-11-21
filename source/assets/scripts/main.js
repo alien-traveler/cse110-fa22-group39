@@ -2,16 +2,16 @@
 
 // CONSTANTS
 const RECIPE_URLS = [
-  'https://introweb.tech/assets/json/1_50-thanksgiving-side-dishes.json',
-  'https://introweb.tech/assets/json/2_roasting-turkey-breast-with-stuffing.json',
-  'https://introweb.tech/assets/json/3_moms-cornbread-stuffing.json',
-  'https://introweb.tech/assets/json/4_50-indulgent-thanksgiving-side-dishes-for-any-holiday-gathering.json',
-  'https://introweb.tech/assets/json/5_healthy-thanksgiving-recipe-crockpot-turkey-breast.json',
-  'https://introweb.tech/assets/json/6_one-pot-thanksgiving-dinner.json',
+  "https://introweb.tech/assets/json/1_50-thanksgiving-side-dishes.json",
+  "https://introweb.tech/assets/json/2_roasting-turkey-breast-with-stuffing.json",
+  "https://introweb.tech/assets/json/3_moms-cornbread-stuffing.json",
+  "https://introweb.tech/assets/json/4_50-indulgent-thanksgiving-side-dishes-for-any-holiday-gathering.json",
+  "https://introweb.tech/assets/json/5_healthy-thanksgiving-recipe-crockpot-turkey-breast.json",
+  "https://introweb.tech/assets/json/6_one-pot-thanksgiving-dinner.json",
 ];
 
 // Run the init() function when the page has loaded
-window.addEventListener('DOMContentLoaded', init);
+window.addEventListener("DOMContentLoaded", init);
 
 // Starts the program, all function calls trace back here
 async function init() {
@@ -45,29 +45,29 @@ function initializeServiceWorker() {
   // We first must register our ServiceWorker here before any of the code in
   // sw.js is executed.
   // B1. TODO - Check if 'serviceWorker' is supported in the current browser
-  if ('serviceWorker' in navigator) {
+  if ("serviceWorker" in navigator) {
     // B2. TODO - Listen for the 'load' event on the window object.
-    addEventListener('load', () => {
+    addEventListener("load", () => {
       // Steps B3-B6 will be *inside* the event listener's function created in B2
       // B3. TODO - Register './sw.js' as a service worker (The MDN article
       //            "Using Service Workers" will help you here)
-      navigator.serviceWorker.register('./sw.js').then(() => {
+      navigator.serviceWorker
+        .register("./sw.js")
+        .then(() => {
           // B4. TODO - Once the service worker has been successfully registered, console
           //            log that it was successful.
-          console.log('Serviceworder registration is successful: ');
-        }).catch(() => {
+          console.log("Serviceworder registration is successful: ");
+        })
+        .catch(() => {
           // B5. TODO - In the event that the service worker registration fails, console
-        //            log that it has failed.
-          console.log('Serviceworker registration failed: ');
-        }
-      );
+          //            log that it has failed.
+          console.log("Serviceworker registration failed: ");
+        });
       // STEPS B6 ONWARDS WILL BE IN /sw.js
     });
-    
   } else {
-    console.log('Serviceworker not supported');
+    console.log("Serviceworker not supported");
   }
-  
 }
 
 /**
@@ -84,9 +84,8 @@ async function getRecipes() {
   //            If there are recipes, return them.
   /**************************/
   if (localStorage.getItem("recipes")) {
-      return JSON.parse(localStorage.getItem("recipes"))
+    return JSON.parse(localStorage.getItem("recipes"));
   }
-
 
   // The rest of this method will be concerned with requesting the recipes
   // from the network
@@ -123,8 +122,8 @@ async function getRecipes() {
     //            resolve() method.
     // A10. TODO - Log any errors from catch using console.error
     // A11. TODO - Pass any errors to the Promise's reject() function
-    for (const link in RECIPE_URLS){
-      try{
+    for (const link in RECIPE_URLS) {
+      try {
         console.log(RECIPE_URLS[link]);
         const tmp = await fetch(RECIPE_URLS[link]);
         const recipe = await tmp.json();
@@ -133,14 +132,12 @@ async function getRecipes() {
           saveRecipesToStorage(rec);
           resolve(rec);
         }
-      }
-      catch (error) {
+      } catch (error) {
         console.error(err);
         reject(error);
       }
-    } 
+    }
   });
-  
 }
 
 /**
@@ -149,7 +146,7 @@ async function getRecipes() {
  * @param {Array<Object>} recipes An array of recipes
  */
 function saveRecipesToStorage(recipes) {
-  localStorage.setItem('recipes', JSON.stringify(recipes));
+  localStorage.setItem("recipes", JSON.stringify(recipes));
 }
 
 /**
@@ -161,9 +158,9 @@ function saveRecipesToStorage(recipes) {
  */
 function addRecipesToDocument(recipes) {
   if (!recipes) return;
-  let main = document.querySelector('main');
+  let main = document.querySelector("main");
   recipes.forEach((recipe) => {
-    let recipeCard = document.createElement('recipe-card');
+    let recipeCard = document.createElement("recipe-card");
     recipeCard.data = recipe;
     main.append(recipeCard);
   });

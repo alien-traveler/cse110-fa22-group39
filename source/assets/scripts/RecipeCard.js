@@ -7,13 +7,13 @@ class RecipeCard extends HTMLElement {
     super(); // Inheret everything from HTMLElement
 
     // Attaches the shadow DOM to this Web Component
-    this.attachShadow({ mode: 'open' });
+    this.attachShadow({ mode: "open" });
 
     // This element will hold our markup once our data is set
-    const article = document.createElement('article');
+    const article = document.createElement("article");
 
     // This style element will hold all of the styles for the Web Component
-    const styles = document.createElement('style');
+    const styles = document.createElement("style");
     // Insert all the styles in to the <style> element
     styles.innerHTML = `
       * {
@@ -97,7 +97,7 @@ class RecipeCard extends HTMLElement {
 
   /**
    * Called when the .data property is set on this element.
-   * 
+   *
    * For Example:
    * let recipeCard = document.createElement('recipe-card'); // Calls constructor()
    * recipeCard.data = { foo: 'bar' } // Calls set data({ foo: 'bar' })
@@ -121,7 +121,7 @@ class RecipeCard extends HTMLElement {
     if (!data) return;
 
     // Select the <article> we added to the Shadow DOM in the constructor
-    const article = this.shadowRoot.querySelector('article');
+    const article = this.shadowRoot.querySelector("article");
 
     // Set the contents of the <article> with the <recipe-card> template and
     // the data passed in
@@ -143,4 +143,4 @@ class RecipeCard extends HTMLElement {
 }
 
 // Define the Class so you can use it as a custom element
-customElements.define('recipe-card', RecipeCard);
+customElements.define("recipe-card", RecipeCard);
