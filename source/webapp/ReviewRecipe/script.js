@@ -34,8 +34,8 @@ function init(){
     const review = {
         "recipeName" : recipeName.value,
         "coffeeType" : coffeeType.value,
-        "drinkType" :  drinkName.value,
-        "size" : drinkSize.value,
+        "drinkType" :  custome["drinkType"],
+        "size" : custome["size"],
         "addOns" : addOnArr,
         "availableShop": []
     };
@@ -83,16 +83,17 @@ function init(){
         let currentRecipes = localStorage.getItem('savedRecipes');
         if (currentRecipes === null){
             let recipeArray = [];
-            recipeArray.push(newRecipe);
+            recipeArray.push(review);
             console.log("the first recipe "+recipeArray);
             localStorage.setItem('savedRecipes', JSON.stringify(recipeArray));
         }
         else{
             let currentRecipesArray = JSON.parse(currentRecipes);
             console.log("the current recipes array"+ currentRecipesArray)
-            currentRecipesArray.push(newRecipe);
+            currentRecipesArray.push(review);
             localStorage.setItem('savedRecipes', JSON.stringify(currentRecipesArray));
         }
+
         localStorage.setItem('review', JSON.stringify(review));
          window.location = "../savedRecipes/savedRecipes.html";
     })

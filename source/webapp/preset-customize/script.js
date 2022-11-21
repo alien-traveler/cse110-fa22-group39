@@ -9,10 +9,14 @@ function init(){
     })
     let rightButtonEl = document.querySelectorAll("button")[1];
     rightButtonEl.addEventListener('click', () => {
-        const index = localStorage.getItem('index');
-        if (index){
-            localStorage.removeItem('index');
-        }
-        window.location = "../CustomizeRecipe/customize.html";
+    const index = localStorage.getItem('index');
+    if (index){
+        localStorage.removeItem('index');
+    }
+    const savedIndex = localStorage.getItem('savedIndex');
+    if (savedIndex){
+        localStorage.removeItem('savedIndex');
+    }
+    window.location = "../CustomizeRecipe/customize.html";
     })
 }

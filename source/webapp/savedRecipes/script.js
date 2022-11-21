@@ -6,10 +6,15 @@ window.onload = function(){
 function init(){
     let recipes = getRecipesFromStorage();
     addRecipesToDocument(recipes);
-    for (var i = 0; i < recipes.length; i++) {
+    const index = localStorage.getItem('index');
+    if (index){
+      localStorage.removeItem('index');
+    }
+    for (let i = 0; i < recipes.length; i++) {
         let ButtonEl = document.querySelectorAll("button")[i];
         ButtonEl.addEventListener('click', () => {
             window.location = "../CustomizeRecipe/customize.html";
+            localStorage.setItem("savedIndex", i);
         })
     }
 }

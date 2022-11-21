@@ -13,6 +13,7 @@ function init() {
     // recipe with the corresponding index from 'recipes' 
     // and sets all the fields with said recipe
     const index = localStorage.getItem('index');
+
     if(index) {
         const preset = JSON.parse(localStorage.getItem('recipes'))[index];
 
@@ -27,6 +28,26 @@ function init() {
         const presetAdd = preset["addOns"];
         for(let i=0; i<presetAdd.length; i++) {
             addOn[presetAdd[i]].checked = true;
+        }
+        localStorage.removeItem("savedIndex");
+    }
+
+    const savedIndex = localStorage.getItem('savedIndex');
+    if (savedIndex){
+
+        const allSaved = JSON.parse(localStorage.getItem('savedRecipes'))[savedIndex];
+        console.log(allSaved);
+
+        recipeName.value = allSaved["recipeName"];
+        if(allSaved["coffeeType"]=="Hot") coffeeType[0].checked = true;
+        else coffeeType[1].checked = true;
+
+        drinkName.selectedIndex = allSaved["drinkType"];
+        drinkSize.selectedIndex = allSaved["size"];
+
+        const allSavedAdd = allSaved["addOns"];
+        for(let i=0; i<allSavedAdd.length; i++) {
+            addOn[allSavedAdd[i]].checked = true;
         }
     }
 
