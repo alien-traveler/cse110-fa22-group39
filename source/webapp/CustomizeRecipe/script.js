@@ -66,11 +66,11 @@ function init() {
             "drinkType" :  drinkName.selectedIndex,
             "size" : drinkSize.selectedIndex,
             "addOns" : addOnArr
-
         };
 
-        // Store to localStorage with key 'custom'
-        localStorage.setItem('custom', JSON.stringify(custom));
+        // Store to localStorage with key of customized recipe NAME
+        const newRecipe = JSON.stringify(custom);
+        localStorage.setItem('custom', newRecipe);
 
         // Go to review
         window.location = "../ReviewRecipe/review.html";
