@@ -1,5 +1,7 @@
 window.addEventListener('DOMContentLoaded', init);
-
+window.onload = function(){
+    this.loadHome();
+}
 function init(){
     let custome = JSON.parse(localStorage.getItem("custom"));
     
@@ -91,6 +93,8 @@ function init(){
             currentRecipesArray.push(newRecipe);
             localStorage.setItem('savedRecipes', JSON.stringify(currentRecipesArray));
         }
+        localStorage.setItem('review', JSON.stringify(review));
+         window.location = "../savedRecipes/savedRecipes.html";
     })
 
 }
