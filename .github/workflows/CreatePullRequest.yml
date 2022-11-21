@@ -1,4 +1,4 @@
-name: Update Main branch
+name: Create Pull Request
 on:
   push:
     branches:
