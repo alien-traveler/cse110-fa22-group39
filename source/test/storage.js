@@ -10,7 +10,7 @@ export const storage = {};
  */
 storage.getItems = () => {
   // localStorage only stores strings so you must JSON.parse() any arrays
-  return JSON.parse(localStorage.getItem('cart')) || [];
+  return JSON.parse(localStorage.getItem("cart")) || [];
 };
 
 /**
@@ -22,7 +22,7 @@ storage.addItem = function (id) {
   // Add the id of the new item to the cart
   currCart.push(id);
   // localStorage only stores strings so you must JSON.stringify() any arrays
-  localStorage.setItem('cart', JSON.stringify(currCart));
+  localStorage.setItem("cart", JSON.stringify(currCart));
 };
 
 /**
@@ -36,5 +36,5 @@ storage.removeItem = function (id) {
   // Remove that index of the item to remove from the cart
   if (indexOfId > -1) currCart.splice(indexOfId, 1);
   // localStorage only stores strings so you must JSON.stringify() any arrays
-  localStorage.setItem('cart', JSON.stringify(currCart));
+  localStorage.setItem("cart", JSON.stringify(currCart));
 };
