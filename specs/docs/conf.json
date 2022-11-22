@@ -2,7 +2,7 @@
     "plugins": [],
     "recurseDepth": 10,
     "source": {
-        "include": ["./source", "./source/webapp", "./source/webapp/CustomizeRecipe", 
+        "include": ["./source", "./source/test", "./source/webapp", "./source/webapp/CustomizeRecipe", 
         "./source/webapp/editThePreset", "./source/webapp/preset-customize", 
         "./source/webapp/preset-list", "./source/webapp/ReviewRecipe", 
         "./source/webapp/savedRecipes"],
