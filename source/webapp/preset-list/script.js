@@ -31,7 +31,7 @@ async function getRecipes() {
 }
 
 function saveRecipes(recipes) {
-    localStorage.setItem('recipes', JSON.stringify(recipes));
+    localStorage.setItem('preset', JSON.stringify(recipes));
 }
 
 function addRecipesToDocument(recipes) {
@@ -61,7 +61,8 @@ function addRecipesToDocument(recipes) {
     for(let i=0; i<buttons.length; i++) {
         buttons[i].addEventListener('click', (event) => {
             window.location = `../CustomizeRecipe/customize.html`;
-            localStorage.setItem('index', i);
+            localStorage.setItem('index', i);           // Pass in correct index
+            localStorage.setItem('mode', 'preset');     // Pass in correct mode
         });
     }
 }

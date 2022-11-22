@@ -14,7 +14,7 @@ async function init(){
     })
     let saveButtonEl = document.querySelectorAll("button")[1];
     saveButtonEl.addEventListener('click', () => {
-        
+        window.location = "./savedRecipes/savedRecipes.html";
     })
     
 }

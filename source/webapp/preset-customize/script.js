@@ -9,10 +9,8 @@ function init(){
     })
     let rightButtonEl = document.querySelectorAll("button")[1];
     rightButtonEl.addEventListener('click', () => {
-        const index = localStorage.getItem('index');
-        if (index){
-            localStorage.removeItem('index');
-        }
+        localStorage.removeItem('index');   // Remove index and mode keys for
+        localStorage.removeItem('mode');    // recipes from scratch
         window.location = "../CustomizeRecipe/customize.html";
     })
 }

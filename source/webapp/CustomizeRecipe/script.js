@@ -9,24 +9,26 @@ function init() {
     const addOn = document.querySelectorAll('#Topping');
     
     // If there is an index passed in:
+    // use the correct mode (preset or saved) and
     // use the 'index' key from localStorage to fetch the 
-    // recipe with the corresponding index from 'recipes' 
-    // and sets all the fields with said recipe
+    // recipe with the corresponding index from either preset 
+    // or saved recipes and sets all the fields with said recipe
     const index = localStorage.getItem('index');
+    const mode = localStorage.getItem('mode');
     if(index) {
-        const preset = JSON.parse(localStorage.getItem('recipes'))[index];
+        const recipe = JSON.parse(localStorage.getItem(mode))[index];
 
-        recipeName.value = preset["recipeName"];
+        recipeName.value = recipe["recipeName"];
 
-        if(preset["coffeeType"]=="Hot") coffeeType[0].checked = true;
+        if(recipe["coffeeType"]=="Hot") coffeeType[0].checked = true;
         else coffeeType[1].checked = true;
 
-        drinkName.selectedIndex = preset["drinkType"];
-        drinkSize.selectedIndex = preset["size"];
+        drinkName.selectedIndex = recipe["drinkType"];
+        drinkSize.selectedIndex = recipe["size"];
 
-        const presetAdd = preset["addOns"];
+        const addOnArr = recipe["addOns"];
         for(let i=0; i<presetAdd.length; i++) {
-            addOn[presetAdd[i]].checked = true;
+            addOn[addOnArr[i]].checked = true;
         }
     }
 
