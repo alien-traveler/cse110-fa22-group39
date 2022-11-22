@@ -6,17 +6,43 @@ window.onload = function(){
 function init(){
     let recipes = getRecipesFromStorage();
     addRecipesToDocument(recipes);
-    const index = localStorage.getItem('index');
-    if (index){
-      localStorage.removeItem('index');
-    }
+    
+    localStorage.removeItem('index');
+    let savedArr = JSON.parse(localStorage.getItem("savedRecipes"));
+
     for (let i = 0; i < recipes.length; i++) {
-        let ButtonEl = document.querySelectorAll("button")[i];
-        ButtonEl.addEventListener('click', () => {
+        let reviewButtonEl = document.getElementById(`recipe${i}`);
+        let removeButtonEl = document.getElementById(`remove${i}`);
+        reviewButtonEl.addEventListener('click', () => {
             window.location = "../CustomizeRecipe/customize.html";
             localStorage.setItem("savedIndex", i);
         })
+        removeButtonEl.addEventListener('click', (event) => {
+          removeEachRecipes(event.target.name, savedArr);
+        })
     }
+}
+
+function removeEachRecipes (name, savedArr){
+
+  let nameRecipes = localStorage.getItem("nameRecipes");
+  let tbl = document.querySelector("table");
+
+  nameRecipes = nameRecipes.split(",");
+
+  for (let i = 0; i < savedArr.length; ++i){
+    if (savedArr[i]["recipeName"] == name){
+      savedArr.splice(i, 1);
+      nameRecipes.splice(i, 1);
+      tbl.deleteRow(i+1);
+      break;
+    }
+  }
+
+  localStorage.removeItem(name);
+
+  localStorage.setItem("nameRecipes", nameRecipes.toString());
+  localStorage.setItem("savedRecipes",JSON.stringify(savedArr));
 }
 
 function getRecipesFromStorage() {
@@ -24,10 +50,15 @@ function getRecipesFromStorage() {
 }
 
 function addRecipesToDocument(recipes) {
-    var tbl = document.querySelector("table");
+    let tbl = document.querySelector("table");
     for (var i = 0; i < recipes.length; i++) {
       tbl.insertRow(-1).innerHTML = `<td><div>${recipes[i].recipeName}</div></td>
-      <td><button class="button" id="recipe${i}">View/Edit</button></td>`
+      <td>
+        <button class="button" id="recipe${i}">View/Edit</button>
+      </td>
+      <td>
+        <button class="button" id="remove${i}" name = "${recipes[i].recipeName}">Delete</button>
+      </td>`
     }
 }
 
