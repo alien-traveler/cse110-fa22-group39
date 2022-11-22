@@ -28,7 +28,14 @@ function updateRecipes(recipes) {
 function populateDocument(recipes) {
   // Fetch the table from the page
   const tbl = document.querySelector("table");
-  tbl.innerHTML = "";   // Clear table for repopulation
+  tbl.innerHTML = `
+  <tr>
+      <td style="width:60%">
+          <div class="tableEl" id="page-title">
+              All Saved Recipes
+          </div>
+      </td>
+  </tr>`;   // Clear table for repopulation
 
   // Populate the table by adding rows (recipes)
   for (let i = 0; i < recipes.length; i++) {
@@ -63,7 +70,7 @@ function populateDocument(recipes) {
     })
 
     // Select delete button by id
-    // They splice the fetched recipe list and updates localStorage
+    // Then splice the fetched recipe list and updates localStorage
     ButtonEl = document.getElementById(`delete${i}`);
     ButtonEl.addEventListener('click', () => {
       recipes.splice(i, 1);
@@ -73,36 +80,40 @@ function populateDocument(recipes) {
 }
 
 function lookUp() {
-  var input, filter, table, tr, td, i, txtValue;
-  input = document.getElementById("input");
-  filter = input.value.toUpperCase();
-  table = document.querySelector("table")
-  tr = table.getElementsByTagName("tr");
+  const recipes = getRecipesFromStorage();                              // Recipes
+  const table = document.querySelector('table');                        // Table
+  const input = document.querySelector('input').value.toUpperCase();    // Input (search query)
+  const rows = table.querySelectorAll('tr');                            // Rows
 
-  if (filter.length != 0) {
-    tr[0].style.display = "none";
+  // If there is an input, no longer show "All Saved Recipes"
+  // Otherwise, show everything
+  if(input.length!=0) {
+    rows[0].style.display = "none";
   } else {
-    for (var i = 0; i < tr.length; i++) {
-        tr[i].style.display = "";
+    for (let i = 0; i < rows.length; i++) {
+      rows[i].style.display = "";
     }
   }
 
-  for (var i = 1; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
-    if (td) {
-      txtValue = td.textContent.toUpperCase() || td.innerText.toUpperCase();
-      var match = true;
-      if (filter.length <= txtValue.length) {
-        for (var j = 0; j < filter.length; j++) {
-           if (txtValue[j] != filter[j]) {
-                tr[i].style.display = "none";
-                match = false;
-                break;
-            }
+  // For each row in the table:
+  for(let i=1; i<rows.length; i++) {
+    // Fetch corresponding saved recipe name
+    const title = recipes[i-1]["recipeName"].toUpperCase();
+    let match = true;
+
+    // If the input is equal to or lesser length than recipe name
+    if(input.length<=title.length) {
+      // Compare each letter
+      for(let j=0; j<input.length; j++) {
+        if(title[j]!=input[j]) {
+          rows[i].style.display = "none";
+          match = false;
+          break;
         }
-        if (match) {
-            tr[i].style.display = "";
-        }
+      }
+      // Show row if name matches
+      if(match) {
+        rows[i].style.display = "";
       }
     }
   }
