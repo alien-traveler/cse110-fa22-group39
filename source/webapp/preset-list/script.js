@@ -1,5 +1,8 @@
 window.addEventListener('DOMContentLoaded', init);
 
+/**
+ * read data of recipes and add events for buttons on preset-recipies.html
+ */
 async function init(){
     let recipes;
 
@@ -12,6 +15,10 @@ async function init(){
     addRecipesToDocument(recipes)
 }
 
+/**
+ * Get the data of preset coffee recipes from the file presets.json
+ * @returns {array} the data of coffee shops as JSON object in an array 
+ */
 async function getRecipes() {
     // Fetch the recipes from localStorage
     let recipes = localStorage.getItem('recipes');
@@ -30,10 +37,19 @@ async function getRecipes() {
       });
 }
 
+/**
+ * store the data of a array of recipes into localStorage
+ * @param {array} recipes an array of coffee recipes
+ */
 function saveRecipes(recipes) {
     localStorage.setItem('recipes', JSON.stringify(recipes));
 }
 
+/**
+ * add rows to the table on this preset-recipies.html page for each recipes
+ * @param {array} recipes an array of coffee recipes needed to be added
+ * to preset-recipies.html page 
+ */
 function addRecipesToDocument(recipes) {
     // Select table from html
     const table = document.querySelector('table');
@@ -56,7 +72,8 @@ function addRecipesToDocument(recipes) {
         table.appendChild(row);
     }
 
-    // Add listeners for all 'View/Edit' buttons and pass in the correct index
+    // Add listeners for all 'View/Edit' buttons and pass 
+    //in the correct index
     const buttons = document.querySelectorAll('button');
     for(let i=0; i<buttons.length; i++) {
         buttons[i].addEventListener('click', (event) => {
