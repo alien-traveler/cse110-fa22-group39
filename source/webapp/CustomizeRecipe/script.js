@@ -39,6 +39,11 @@ function init() {
         console.log(allSaved);
 
         recipeName.value = allSaved["recipeName"];
+        const condition = localStorage.getItem("Condition");
+        if ((condition==='Edit')){
+          localStorage.setItem('OldNameEdit',allSaved["recipeName"]);
+        }
+
         if(allSaved["coffeeType"]=="Hot") coffeeType[0].checked = true;
         else coffeeType[1].checked = true;
 
@@ -54,11 +59,11 @@ function init() {
 
     // Listen for valid submits (all fields entered)
     const form = document.querySelector('form');
+    const condition = localStorage.getItem('Condition');
     form.addEventListener("submit", (event) => {
       event.preventDefault(); // Prevent refreshing page
-
-      const notRepeat = checkRepeatName(recipeName.value);
-      if (!notRepeat) {
+      
+      if ((condition==='Create') && !checkRepeatName(recipeName.value)) {
         alert("The recipe name already exists. Please rename your recipe.");
       } else {
         // Store all checked addons

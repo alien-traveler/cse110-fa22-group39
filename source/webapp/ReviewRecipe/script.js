@@ -61,35 +61,81 @@ function init(){
     const newRecipe = JSON.stringify(review);
     const newRecipeName = review.recipeName;
 
-    buttonEl.addEventListener('click', () => {
-        let currentNames = localStorage.getItem('nameRecipes');
-        if (currentNames === null){
-            let newRecipeArray = new Array(newRecipeName);
-            localStorage.setItem('nameRecipes', newRecipeArray.toString());
-        }
-        else{
-            let currentNamesArray = currentNames.split(',');
-            currentNamesArray.push(newRecipeName);
-            localStorage.setItem('nameRecipes', currentNamesArray);
-        }
-
-        localStorage.setItem(review.recipeName, newRecipe);
-
-        let currentRecipes = localStorage.getItem('savedRecipes');
-        if (currentRecipes === null){
-            let recipeArray = [];
-            recipeArray.push(review);
-            localStorage.setItem('savedRecipes', JSON.stringify(recipeArray));
-        }
-        else{
-            let currentRecipesArray = JSON.parse(currentRecipes);
-            currentRecipesArray.push(review);
-            localStorage.setItem('savedRecipes', JSON.stringify(currentRecipesArray));
+    buttonEl.addEventListener("click", () => {
+      const condition = localStorage.getItem("Condition");
+      if (condition === "Create") {
+        let currentNames = localStorage.getItem("nameRecipes");
+        if (currentNames === null) {
+          let newRecipeArray = new Array(newRecipeName);
+          localStorage.setItem("nameRecipes", newRecipeArray.toString());
+        } else {
+          let currentNamesArray = currentNames.split(",");
+          currentNamesArray.push(newRecipeName);
+          localStorage.setItem("nameRecipes", currentNamesArray);
         }
 
-        localStorage.setItem('review', JSON.stringify(review));
-         window.location = "../savedRecipes/savedRecipes.html";
-    })
+        localStorage.setItem(newRecipeName, newRecipe);
+
+        let currentRecipes = localStorage.getItem("savedRecipes");
+        if (currentRecipes === null) {
+          let recipeArray = [];
+          recipeArray.push(review);
+          localStorage.setItem("savedRecipes", JSON.stringify(recipeArray));
+        } else {
+          let currentRecipesArray = JSON.parse(currentRecipes);
+          currentRecipesArray.push(review);
+          localStorage.setItem(
+            "savedRecipes",
+            JSON.stringify(currentRecipesArray)
+          );
+        }
+      } else {
+        const oldName = localStorage.getItem("OldNameEdit");
+        let findName;
+        //Name has been changed
+        if (oldName !== newRecipeName) {
+          findName = oldName;
+          //update nameRecipes
+          let currentNames = localStorage.getItem("nameRecipes");
+          let currentNamesArray = currentNames.split(",");
+          for (const eachName in currentNamesArray) {
+            if (currentNamesArray[eachName] === oldName) {
+              currentNamesArray[eachName] = newRecipeName;
+              break;
+            }
+          }
+          localStorage.setItem("nameRecipes", currentNamesArray);
+
+          //update name-recipe pairs
+          localStorage.removeItem(oldName);
+          localStorage.setItem(newRecipeName, newRecipe);
+        }
+        // Name stays the same
+        else {
+          findName = newRecipeName;
+          //update name-recipe pairs
+          localStorage.setItem(newRecipeName, newRecipe);
+        }
+        
+        //update savedRecipes array
+        let currentRecipes = localStorage.getItem("savedRecipes");
+        let currentRecipesArray = JSON.parse(currentRecipes);
+        for (recipe in currentRecipesArray) {
+          const reciName = currentRecipesArray[recipe].recipeName;
+          if (findName === reciName) {
+            currentRecipesArray[recipe] = review;
+            break;
+          }
+        }
+        localStorage.setItem(
+          "savedRecipes",
+          JSON.stringify(currentRecipesArray)
+        );
+      }
+
+      localStorage.setItem("review", JSON.stringify(review));
+      window.location = "../savedRecipes/savedRecipes.html";
+    });
 
 }
 

@@ -13,6 +13,7 @@ function init(){
     for (let i = 0; i < recipes.length; i++) {
         let ButtonEl = document.querySelectorAll("button")[i];
         ButtonEl.addEventListener('click', () => {
+            localStorage.setItem('Condition','Edit');
             window.location = "../CustomizeRecipe/customize.html";
             localStorage.setItem("savedIndex", i);
         })
