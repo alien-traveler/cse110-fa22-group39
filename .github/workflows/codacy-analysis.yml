@@ -1,6 +1,8 @@
 name: Codacy Analysis CLI
 
-on: ["push"]
+on:
+  push:
+    branches: [ "master", "main", "integrate-pipeline", "staging" ]
 
 jobs:
   codacy-analysis-cli:

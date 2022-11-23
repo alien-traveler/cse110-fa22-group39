@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - integrate-pipeline
+      - staging
       
 permissions:
   contents: read
