@@ -1,5 +1,9 @@
 window.addEventListener('DOMContentLoaded', init);
 
+window.onload = function(){
+    this.loadHome();
+}
+
 async function init(){
     let recipes;
 

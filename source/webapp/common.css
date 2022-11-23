@@ -24,7 +24,7 @@ body {
     font-weight: bold;
     cursor: pointer;
     position: absolute;
-    left: 50%;
+    left: 5%;
 }
 
 .asText:hover{
