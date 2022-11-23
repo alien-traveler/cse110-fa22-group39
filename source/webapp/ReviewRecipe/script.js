@@ -61,11 +61,6 @@ function init(){
     const newRecipe = JSON.stringify(review);
     const newRecipeName = review.recipeName;
 
-    const notRepeat = checkRepeatName(newRecipeName);
-    if (!notRepeat){
-        alert('The recipe name already exists. Please rename your recipe or the old recipe will be replaced.');
-    }
-
     buttonEl.addEventListener('click', () => {
         let currentNames = localStorage.getItem('nameRecipes');
         if (currentNames === null){
@@ -84,12 +79,10 @@ function init(){
         if (currentRecipes === null){
             let recipeArray = [];
             recipeArray.push(review);
-            console.log("the first recipe "+recipeArray);
             localStorage.setItem('savedRecipes', JSON.stringify(recipeArray));
         }
         else{
             let currentRecipesArray = JSON.parse(currentRecipes);
-            console.log("the current recipes array"+ currentRecipesArray)
             currentRecipesArray.push(review);
             localStorage.setItem('savedRecipes', JSON.stringify(currentRecipesArray));
         }
@@ -100,17 +93,3 @@ function init(){
 
 }
 
-function checkRepeatName(newName){
-    const currentNames = localStorage.getItem('nameRecipes');
-    if (currentNames === null){
-        return true;
-    }
-    else {
-        for (const name in currentNames){
-            if (currentNames[name] === newName){
-                return false;
-            }
-        }
-    }
-    return true;
-}

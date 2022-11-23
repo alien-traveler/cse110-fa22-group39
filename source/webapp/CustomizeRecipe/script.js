@@ -54,15 +54,19 @@ function init() {
 
     // Listen for valid submits (all fields entered)
     const form = document.querySelector('form');
-    form.addEventListener('submit', (event) => {
-        event.preventDefault();     // Prevent refreshing page
+    form.addEventListener("submit", (event) => {
+      event.preventDefault(); // Prevent refreshing page
 
+      const notRepeat = checkRepeatName(recipeName.value);
+      if (!notRepeat) {
+        alert("The recipe name already exists. Please rename your recipe.");
+      } else {
         // Store all checked addons
         const addOnArr = [];
-        for(let i=0; i<addOn.length; i++) {
-            if(addOn[i].checked) {
-                addOnArr.push(i);
-            }
+        for (let i = 0; i < addOn.length; i++) {
+          if (addOn[i].checked) {
+            addOnArr.push(i);
+          }
         }
 
         // Generate map of the form:
@@ -82,18 +86,36 @@ function init() {
         //                      4: "Cream"
         //                      5: "Water"
         const custom = {
-            "recipeName" : recipeName.value,
-            "coffeeType" : (coffeeType[0].checked) ? "Hot" : "Cold",
-            "drinkType" :  drinkName.selectedIndex,
-            "size" : drinkSize.selectedIndex,
-            "addOns" : addOnArr
+          recipeName: recipeName.value,
+          coffeeType: coffeeType[0].checked ? "Hot" : "Cold",
+          drinkType: drinkName.selectedIndex,
+          size: drinkSize.selectedIndex,
+          addOns: addOnArr,
         };
 
         // Store to localStorage with key of customized recipe NAME
         const newRecipe = JSON.stringify(custom);
-        localStorage.setItem('custom', newRecipe);
+        localStorage.setItem("custom", newRecipe);
 
         // Go to review
         window.location = "../ReviewRecipe/review.html";
+      }
     });   
+}
+
+function checkRepeatName(newName){
+    const currentNames = localStorage.getItem('nameRecipes');
+    
+    if (currentNames === null){
+        return true;
+    }
+    else {
+        const currentNamesArray = currentNames.split(',')
+        for (const name in currentNamesArray){
+            if (currentNamesArray[name] === newName){
+                return false;
+            }
+        }
+    }
+    return true;
 }

@@ -26,7 +26,7 @@ async function getShops() {
     
     return new Promise(async (resolve, reject) => {
         try {
-            shops = await fetch("../shops.json");
+            shops = await fetch("./shops.json");
             shops = await shops.json();
             localStorage.setItem('shops', JSON.stringify(shops));
             resolve(shops);
