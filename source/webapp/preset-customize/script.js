@@ -17,6 +17,7 @@ function init(){
     if (savedIndex){
         localStorage.removeItem('savedIndex');
     }
+    localStorage.setItem('Condition','Create');
     window.location = "../CustomizeRecipe/customize.html";
     })
 }
