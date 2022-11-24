@@ -1,6 +1,12 @@
 window.addEventListener('DOMContentLoaded', init);
 
+window.onload = function(){
+    this.loadHome();
+}
+
 function init() {
+    
+
     // All input fields
     const recipeName = document.getElementById('name');
     const coffeeType = document.querySelectorAll('[name="CoffeeType"]');
