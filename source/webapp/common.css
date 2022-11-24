@@ -16,18 +16,18 @@ body {
     width: 150px;
     height: 50px;
     background-color: #fffbf3;
-    border-radius: 30px;
+    border-radius: 20px;
     color: black;
     border: none;
     vertical-align: middle;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     cursor: pointer;
     position: absolute;
-    left: 5%;
+    left: 0%;
 }
 
 .asText:hover{
-    background-color: #b38d22;
+    font-style: italic;
     color:black;
 }
