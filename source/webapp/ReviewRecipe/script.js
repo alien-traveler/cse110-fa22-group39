@@ -5,11 +5,11 @@ window.onload = function(){
 function init(){
     let custome = JSON.parse(localStorage.getItem("custom"));
     
-    const recipeName = document.getElementById('coffeeName');
-    const coffeeType = document.getElementById('coffeeName1');
-    const drinkName = document.getElementById('drinkTypeInput');
-    const drinkSize = document.getElementById('sizeTypeInput');
-    const addOn = document.querySelectorAll('#Topping');
+    const recipeName = document.getElementById('coffee-name');
+    const coffeeType = document.getElementById('custom-coffee-name');
+    const drinkName = document.getElementById('drink-type-input');
+    const drinkSize = document.getElementById('size-type-input');
+    const addOn = document.querySelectorAll('#topping');
     let shopEl;
 
     let drinkType = {1: "Cappuccinos", 2: "Latte", 3: "Espresso"};

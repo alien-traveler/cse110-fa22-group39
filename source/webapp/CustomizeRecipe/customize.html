@@ -1,47 +1,45 @@
 <!DOCTYPE html>
-
 <head>
   <meta charset="UTF-8">
-  <title>Customize_recipes</title>
+  <title>Customize recipes</title>
   <link rel="icon" type="image/x-icon" href="../images/favicon.png">
   <link rel="stylesheet" href="customize.css">
   <link rel="stylesheet" href="../common.css">
   <script src="./script.js"></script>
 </head>
-
 <body>
   <section id="home"></section>
   <h1>Time to Customize!</h1>
-  <form id="customizeForm">
+  <form id="customize-form">
     <div class="container">
       <div class="item">
-        <div class="recipeName">
-          <label for="recipeName"> Recipe Name </label>
+        <div class="recipe-name">
+          <label for="recipe-name"> Recipe Name </label>
         </div>
       </div>
       <div class="item">
-        <div class="recipeNameInput">
-          <input name="recipeName" id="name" required />
+        <div class="recipe-name-input">
+          <input name="recipe-name" id="name" required />
         </div>
       </div>
       <div class="item">
-        <div class="coffeeType">
-          <label for="coffeeType"> Coffee Type </label>
+        <div class="coffee-type">
+          <label for="coffee-type"> Coffee Type </label>
         </div>
       </div>
       <div class="item">
-        <input type="radio" id="HotCoffee" name="CoffeeType" value="Hot Coffee" required>
-        <label for="HotCoffee" id="Hot"> Hot Coffee </label>
-        <input type="radio" id="ColdCoffee" name="CoffeeType" value="Cold Coffee">
-        <label for="ColdCoffee" id="Cold"> Cold Coffee </label>
+        <input type="radio" id="hot-coffee" name="coffee-type" value="Hot Coffee" required>
+        <label for="hot-coffee" id="hot"> Hot Coffee </label>
+        <input type="radio" id="cold-coffee" name="coffee-type" value="Cold Coffee">
+        <label for="cold-coffeee" id="cold"> Cold Coffee </label>
       </div>
       <div class="item">
-        <div class="chooseDrink">
-          <label for="chooseDrink"> Choose Your Drink </label>
+        <div class="choose-drink">
+          <label for="choose-drink"> Choose Your Drink </label>
         </div>
       </div>
       <div class="item">
-        <select name="ChooseDrinks" id="DrinksName" required>
+        <select name="choose-drinks" id="drinks-name" required>
           <option hidden disabled selected value></option>
           <option value="Cappuccinos">Cappuccinos</option>
           <option value="Latte">Latte</option>
@@ -54,50 +52,46 @@
         </div>
       </div>
       <div class="item">
-        <select name="ChooseSize" id="SizeName" required>
+        <select name="choose-size" id="size-name" required>
           <option hidden disabled selected value></option>
           <option value="S">S</option>
           <option value="M">M</option>
           <option value="L">L</option>
         </select>
       </div>
-      <div class="addOn">
-        <label for="addOn"> Add-Ons</label>
+      <div class="add-on">
+        <label for="add-on"> Add-Ons</label>
       </div>
-      <div class="addOns">
-        <div class="Caramel">
-          <input type="checkbox" id="Topping" name="Caramel" value="Caramel" />
-          <label for="Caramel"> Caramel</label>
+      <div class="add-ons">
+        <div class="caramel">
+          <input type="checkbox" id="topping" name="caramel" value="Caramel" />
+          <label for="caramel"> Caramel</label>
         </div>
-        <div class="Sugar">
-          <input type="checkbox" id="Topping" name="Sugar" value="Sugar">
-          <label for="Sugar">Sugar </label>
+        <div class="sugar">
+          <input type="checkbox" id="topping" name="sugar" value="Sugar">
+          <label for="sugar">Sugar </label>
         </div>
-        <div class="ExtraShort">
-          <input type="checkbox" id="Topping" name="ExtraShort" value="ExtraShort">
-          <label for="ExtraShort">Extra short </label>
+        <div class="extra-short">
+          <input type="checkbox" id="topping" name="extra-short" value="ExtraShort">
+          <label for="extra-short">Extra short </label>
         </div>
-        <div class=Milk>
-          <input type="checkbox" id="Topping" name="Milk" value="Milk">
-          <label for="Milk">Milk </label>
+        <div class=milk>
+          <input type="checkbox" id="topping" name="milk" value="Milk">
+          <label for="milk">Milk </label>
         </div>
-        <div class=Cream>
-          <input type="checkbox" id="Topping" name="Cream" value="Cream">
-          <label for="Cream">Cream </label>
+        <div class=cream>
+          <input type="checkbox" id="topping" name="cream" value="Cream">
+          <label for="cream">Cream </label>
         </div>
-        <div class=Water>
-          <input type="checkbox" id="Topping" name="Water" value="Water">
-          <label for="Water">Water</label>
+        <div class=water>
+          <input type="checkbox" id="topping" name="water" value="Water">
+          <label for="water">Water</label>
         </div>
         <input class = "button" type="submit" value="Save and Continue">
       </div>
     </div>
   </form>
-
   <div id="content" style="float: right;">
-    <!-- <button class="button">Save and Continue</button> -->
-    <!-- <button class="button">Saved Recipes</button> -->
-  </div>
+</div>
 </body>
-
 </html>
