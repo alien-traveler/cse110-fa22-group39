@@ -4,6 +4,12 @@ window.onload = function(){
     this.loadHome();
 }
 
+/**
+ * Load the data of coffee recipe from localStorage, and show them on 
+ * CustomizeRecipe.html page and users can change their flavor on this 
+ * page. This function also helps to store the data of coffee recipes
+ * into localStorage.
+ */
 function init() {
     
 
@@ -20,9 +26,10 @@ function init() {
     // and sets all the fields with said recipe
     const index = localStorage.getItem('index');
 
+    //users entered this page by clicking preset
     if(index) {
         const preset = JSON.parse(localStorage.getItem('recipes'))[index];
-
+  
         recipeName.value = preset["recipeName"];
 
         if(preset["coffeeType"]=="Hot") coffeeType[0].checked = true;
@@ -39,13 +46,14 @@ function init() {
     }
 
     const savedIndex = localStorage.getItem('savedIndex');
+    //users entered this page by clicking savedRecipes
     if (savedIndex){
 
         const allSaved = JSON.parse(localStorage.getItem('savedRecipes'))[savedIndex];
-        console.log(allSaved);
 
         recipeName.value = allSaved["recipeName"];
         const condition = localStorage.getItem("Condition");
+        // users want to edit the recipes
         if ((condition==='Edit')){
           localStorage.setItem('OldNameEdit',allSaved["recipeName"]);
         }
@@ -114,13 +122,18 @@ function init() {
     });   
 }
 
+/**
+ * check the recipe name to see whether there are same name in the history
+ * @param {string} newName name of the new recipe
+ * @returns whether this is a repeated name
+ */
 function checkRepeatName(newName){
     const currentNames = localStorage.getItem('nameRecipes');
-    
+    // not a repeated name
     if (currentNames === null){
         return true;
     }
-    else {
+    else {// it is a repeated name
         const currentNamesArray = currentNames.split(',')
         for (const name in currentNamesArray){
             if (currentNamesArray[name] === newName){
