@@ -2,6 +2,13 @@ window.addEventListener('DOMContentLoaded', init);
 window.onload = function(){
     this.loadHome();
 }
+
+/**
+ * load the customize data of this coffee recipe from localStorage in a
+ * JSON object format to review.html page. It is also able to Find 
+ * the coffee shops that meet the requirements of the coffee recipe.
+ * Then it checks the repeated names among recipes.
+ */
 function init(){
     let custome = JSON.parse(localStorage.getItem("custom"));
     
@@ -15,11 +22,13 @@ function init(){
     let drinkType = {1: "Cappuccinos", 2: "Latte", 3: "Espresso"};
     let size = {"1": "S", "2": "M", "3": "L"};
 
+    //fill the data to the attributes
     recipeName.value = custome["recipeName"];
     coffeeType.value = custome["coffeeType"];
     drinkName.value = drinkType[custome["drinkType"]];
     drinkSize.value = size[custome["size"]];
 
+    //fill the data of addons 
     const customeAdd = custome["addOns"];
     for(let i=0; i<customeAdd.length; i++) {
         addOn[customeAdd[i]].checked = true;
@@ -31,6 +40,7 @@ function init(){
         }
     }
 
+    //create JSON object to store a recipe
     const review = {
         "recipeName" : recipeName.value,
         "coffeeType" : coffeeType.value,
@@ -43,9 +53,8 @@ function init(){
     //check shops
     let shops = JSON.parse(localStorage.getItem("shops"));
     let numShops = 1;
-    console.log(shops[0]["drinkType"]);
-    console.log(drinkName.value);
     for (let i = 0; i < shops.length; i++){
+        //meets the requirement
         if (shops[i]["coffeeType"].includes(coffeeType.value)
         && shops[i]["drinkType"].includes(drinkName.value)
         && shops[i]["size"].includes(drinkSize.value)){
@@ -55,15 +64,16 @@ function init(){
             numShops++;
         }
     }
-    console.log(review);
 
     const buttonEl = document.querySelector("button");
     const newRecipe = JSON.stringify(review);
     const newRecipeName = review.recipeName;
 
+    //save and continue button
     buttonEl.addEventListener("click", () => {
       const condition = localStorage.getItem("Condition");
       if (condition === "Create") {
+        //create recipe
         let currentNames = localStorage.getItem("nameRecipes");
         if (currentNames === null) {
           let newRecipeArray = new Array(newRecipeName);
@@ -89,7 +99,7 @@ function init(){
             JSON.stringify(currentRecipesArray)
           );
         }
-      } else {
+      } else {// edit the recipe
         const oldName = localStorage.getItem("OldNameEdit");
         let findName;
         //Name has been changed
