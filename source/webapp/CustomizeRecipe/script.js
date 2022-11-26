@@ -15,10 +15,10 @@ function init() {
 
     // All input fields
     const recipeName = document.getElementById('name');
-    const coffeeType = document.querySelectorAll('[name="CoffeeType"]');
-    const drinkName = document.getElementById('DrinksName');
-    const drinkSize = document.getElementById('SizeName');
-    const addOn = document.querySelectorAll('#Topping');
+    const coffeeType = document.querySelectorAll('[name="coffee-type"]');
+    const drinkName = document.getElementById('drinks-name');
+    const drinkSize = document.getElementById('size-name');
+    const addOn = document.querySelectorAll('#topping');
     
     // If there is an index passed in:
     // use the 'index' key from localStorage to fetch the 
