@@ -1,5 +1,9 @@
 window.addEventListener('DOMContentLoaded', init);
 
+window.onload = function(){
+    this.loadHome();
+}
+
 /**
  * Load the data of coffee recipe from localStorage, and show them on 
  * CustomizeRecipe.html page and users can change their flavor on this 
@@ -7,6 +11,8 @@ window.addEventListener('DOMContentLoaded', init);
  * into localStorage.
  */
 function init() {
+    
+
     // All input fields
     const recipeName = document.getElementById('name');
     const coffeeType = document.querySelectorAll('[name="CoffeeType"]');
