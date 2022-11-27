@@ -13,11 +13,9 @@ window.onload = function () {
 function init() {
   let recipes = getRecipesFromStorage();
   addRecipesToDocument(recipes);
-
   // prevent loading data from preset coffee recipes
   localStorage.removeItem("index");
   let savedArr = JSON.parse(localStorage.getItem("savedRecipes"));
-
   // add buttons for each coffee recipes
   for (let i = 0; i < recipes.length; i++) {
     let reviewButtonEl = document.getElementById(`recipe${i}`);
@@ -31,7 +29,6 @@ function init() {
       removeEachRecipes(event.target.name, savedArr);
     });
   }
-
   // make the page scrollable
   scrollable();
 }
