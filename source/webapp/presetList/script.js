@@ -60,7 +60,7 @@ function addRecipesToDocument(recipes) {
   const buttons = document.querySelectorAll("button");
   for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener("click", (event) => {
-      window.location = `../CustomizeRecipe/customize.html`;
+      window.location = `../customizeRecipe/customize.html`;
       localStorage.setItem("index", i);
     });
   }
