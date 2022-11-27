@@ -2,46 +2,22 @@
     {
         "recipeName": "Coffe Americano",
         "coffeeType": "Hot",
-        "drinkType": "Espresso",
-        "size": "M",
-        "addOns": [
-            "Extra Shot",
-            "Water"
-        ],
-        "availableShops": [
-            "Blue Bottle",
-            "Starbucks"
-        ]
+        "drinkType": 3,
+        "size": 2,
+        "addOns": [2,5]
     },
     {
         "recipeName": "Coffe Latte",
         "coffeeType": "Hot",
-        "drinkType": "Latte",
-        "size": "L",
-        "addOns": [
-            "Sugar",
-            "Milk",
-            "Cream"
-        ],
-        "availableShops": [
-            "Starbucks",
-            "Bird Rock Coffee"
-        ]
+        "drinkType": 2,
+        "size": 3,
+        "addOns": [1,3,4]
     },
     {
         "recipeName": "Standard Cappuccino",
         "coffeeType": "Cold",
-        "drinkType": "cappuccino",
-        "size": "S",
-        "addOns": [
-            "Extra Shot",
-            "Milk",
-            "Water"
-        ],
-        "availableShops": [
-            "Philz Coffee",
-            "Blue Bottle",
-            "Starbucks"
-        ]
+        "drinkType": 1,
+        "size": 1,
+        "addOns": [2,3,5]
     }
 ]

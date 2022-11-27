@@ -3,26 +3,91 @@ window.onload = function(){
     this.loadHome();
 }
 
+/**
+ * add View/Edit and delete buttons for each recipes in allSavedRecipes 
+ * page. For View/Edit button, it will direct to CustomizeRecipe.html 
+ * and load the corresponding coffee recipes data into that page. For 
+ * delete button, it will remove the corresponding data of coffee recipes
+ * from localStorage, and remove from this page as well.
+ */
 function init(){
     let recipes = getRecipesFromStorage();
     addRecipesToDocument(recipes);
-    for (var i = 0; i < recipes.length; i++) {
-        let ButtonEl = document.querySelectorAll("button")[i];
-        ButtonEl.addEventListener('click', () => {
+    
+    //prevent loading data from preset coffee recipes
+    localStorage.removeItem('index');
+    let savedArr = JSON.parse(localStorage.getItem("savedRecipes"));
+
+    //add buttons for each coffee recipes
+    for (let i = 0; i < recipes.length; i++) {
+        let reviewButtonEl = document.getElementById(`recipe${i}`);
+        let removeButtonEl = document.getElementById(`remove${i}`);
+        reviewButtonEl.addEventListener('click', () => {
+            localStorage.setItem('Condition','Edit');
             window.location = "../CustomizeRecipe/customize.html";
+            localStorage.setItem("savedIndex", i);
+        })
+        removeButtonEl.addEventListener('click', (event) => {
+          removeEachRecipes(event.target.name, savedArr);
         })
     }
 }
 
+/**
+ * Remove the corresponding data of coffee recipes from localStorage if 
+ * users click the delete button right after the View/Edit button.
+ * @param {string} name the name of the recipes 
+ * @param {array} savedArr all saved recipes array
+ */
+function removeEachRecipes (name, savedArr){
+
+  let nameRecipes = localStorage.getItem("nameRecipes");
+  let tbl = document.querySelector("table");
+
+  nameRecipes = nameRecipes.split(",");
+
+  //delete the corresponding data of coffee recipe iteratively
+  for (let i = 0; i < savedArr.length; ++i){
+    if (savedArr[i]["recipeName"] == name){
+      //delete data from all saved recipes array
+      savedArr.splice(i, 1);
+      nameRecipes.splice(i, 1);
+      //delete from SavedRecipes.html page
+      tbl.deleteRow(i+1);
+      break;
+    }
+  }
+
+  localStorage.removeItem(name);
+  //update the data from localStorage and push them back
+  localStorage.setItem("nameRecipes", nameRecipes.toString());
+  localStorage.setItem("savedRecipes",JSON.stringify(savedArr));
+}
+
+/**
+ * Get data of coffee recipes whose key is "savedRecipes" from localStorage
+ * @returns {array} an array of all the coffee recipes from localStorage
+ */
 function getRecipesFromStorage() {
     return JSON.parse(window.localStorage.getItem('savedRecipes'));
 }
 
+/**
+ * add rows to the table on this SavedRecipes.html page for each recipes
+ * @param {array} recipes an array of coffee recipes needed to be added
+ * to SavedRecipes.html page 
+ */
 function addRecipesToDocument(recipes) {
-    var tbl = document.querySelector("table");
+    let tbl = document.querySelector("table");
     for (var i = 0; i < recipes.length; i++) {
+      //add View/Edit and delete button for each recipe
       tbl.insertRow(-1).innerHTML = `<td><div>${recipes[i].recipeName}</div></td>
-      <td><button class="button" id="recipe${i}">View/Edit</button></td>`
+      <td>
+        <button class="button" id="recipe${i}">View/Edit</button>
+      </td>
+      <td>
+        <button class="button" id="remove${i}" name = "${recipes[i].recipeName}">Delete</button>
+      </td>`
     }
 }
 

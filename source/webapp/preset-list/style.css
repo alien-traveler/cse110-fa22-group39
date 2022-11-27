@@ -30,7 +30,7 @@
   .column {
     flex: 70%;
     padding: 10px;
-    height: 300px; /* Should be removed. Only for demonstration */
+    height: 300px; 
   }
 
 div{
@@ -48,6 +48,8 @@ div{
 }
 
 #page-title{
+    padding-top: 10%;
+    padding-left: 25%;
     background-color: #fffbf3;
     color: #573d06;
 }
