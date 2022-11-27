@@ -94,6 +94,6 @@ function init() {
     localStorage.setItem("custom", newRecipe);
 
     // Go to review
-    window.location = "../reviewRecipe/review.html";
+    window.location = "../ReviewRecipe/review.html";
   });
 }
