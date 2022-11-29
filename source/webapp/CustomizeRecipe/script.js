@@ -115,7 +115,7 @@ function init() {
       localStorage.setItem("custom", newRecipe);
 
       // Go to review
-      window.location = "../ReviewRecipe/review.html";
+      window.location = "../reviewRecipe/reviewRecipe.html";
     }
   });
 }

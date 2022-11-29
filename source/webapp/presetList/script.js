@@ -82,7 +82,7 @@ function addRecipesToDocument(recipes) {
   for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener("click", (event) => {
       localStorage.setItem("Condition", "Create");
-      window.location = `../CustomizeRecipe/customize.html`;
+      window.location = `../customizeRecipe/customizeRecipe.html`;
       localStorage.setItem("index", i);
     });
   }

@@ -24,7 +24,7 @@ function init(){
         let removeButtonEl = document.getElementById(`remove${i}`);
         reviewButtonEl.addEventListener('click', () => {
             localStorage.setItem('Condition','Edit');
-            window.location = "../CustomizeRecipe/customize.html";
+            window.location = "../customizeRecipe/customizeRecipe.html";
             localStorage.setItem("savedIndex", i);
         })
         removeButtonEl.addEventListener('click', (event) => {
