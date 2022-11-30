@@ -11,26 +11,29 @@ window.onload = function(){
  * from localStorage, and remove from this page as well.
  */
 function init(){
-    let recipes = getRecipesFromStorage();
-    addRecipesToDocument(recipes);
+  //add all the saved recipes to the page
+  let recipes = getRecipesFromStorage();
+  addRecipesToDocument(recipes);
     
-    //prevent loading data from preset coffee recipes
-    localStorage.removeItem('index');
-    let savedArr = JSON.parse(localStorage.getItem("savedRecipes"));
+  //prevent loading data from preset coffee recipes
+  localStorage.removeItem('index');
+  let savedArr = JSON.parse(localStorage.getItem("savedRecipes"));
 
-    //add buttons for each coffee recipes
-    for (let i = 0; i < recipes.length; i++) {
-        let reviewButtonEl = document.getElementById(`recipe${i}`);
-        let removeButtonEl = document.getElementById(`remove${i}`);
-        reviewButtonEl.addEventListener('click', () => {
-            localStorage.setItem('Condition','Edit');
-            window.location = "../CustomizeRecipe/customize.html";
-            localStorage.setItem("savedIndex", i);
-        })
-        removeButtonEl.addEventListener('click', (event) => {
-          removeEachRecipes(event.target.name, savedArr);
-        })
-    }
+  //add buttons for each coffee recipes
+  for (let i = 0; i < recipes.length; i++) {
+      let reviewButtonEl = document.getElementById(`recipe${i}`);
+      let removeButtonEl = document.getElementById(`remove${i}`);
+      reviewButtonEl.addEventListener('click', () => {
+          localStorage.setItem('Condition','Edit');
+          window.location = "../customizeRecipe/customizeRecipe.html";
+          localStorage.setItem("savedIndex", i);
+      })
+      removeButtonEl.addEventListener('click', (event) => {
+        removeEachRecipes(event.target.name, savedArr);
+      })
+  }
+
+  scrollable();
 }
 
 /**
@@ -40,7 +43,7 @@ function init(){
  * @param {array} savedArr all saved recipes array
  */
 function removeEachRecipes (name, savedArr){
-
+  //defined and set all the needed elements
   let nameRecipes = localStorage.getItem("nameRecipes");
   let tbl = document.querySelector("table");
 
@@ -62,6 +65,13 @@ function removeEachRecipes (name, savedArr){
   //update the data from localStorage and push them back
   localStorage.setItem("nameRecipes", nameRecipes.toString());
   localStorage.setItem("savedRecipes",JSON.stringify(savedArr));
+}
+
+/**
+ * Makes the table storing all the saved recipes scrollable
+ */
+ function scrollable() {
+  document.querySelector("table").style.overflowY = "scroll";
 }
 
 /**
@@ -92,33 +102,42 @@ function addRecipesToDocument(recipes) {
 }
 
 function lookUp() {
+  //define and set all needed variables
   var input, filter, table, tr, td, i, txtValue;
   input = document.getElementById("input");
   filter = input.value.toUpperCase();
   table = document.querySelector("table")
   tr = table.getElementsByTagName("tr");
 
+  //when searching, hide the words "All saved recipes"
   if (filter.length != 0) {
     tr[0].style.display = "none";
+  //when search bar has no character, display everything
   } else {
     for (var i = 0; i < tr.length; i++) {
         tr[i].style.display = "";
     }
   }
 
+  //traverse over all the saved recipes
   for (var i = 1; i < tr.length; i++) {
     td = tr[i].getElementsByTagName("td")[0];
     if (td) {
+      //get the name of saved recipe
       txtValue = td.textContent.toUpperCase() || td.innerText.toUpperCase();
       var match = true;
+      //this "if" make sure the program won't crahsed when overloaded with search
       if (filter.length <= txtValue.length) {
+        //traverse through all characters in the search bar
         for (var j = 0; j < filter.length; j++) {
-           if (txtValue[j] != filter[j]) {
+          //if any character unmatch, hide this recipe 
+          if (txtValue[j] != filter[j]) {
                 tr[i].style.display = "none";
                 match = false;
                 break;
             }
         }
+        //if every thing matches so far, keep showing this recipe
         if (match) {
             tr[i].style.display = "";
         }
@@ -126,4 +145,3 @@ function lookUp() {
     }
   }
 }
-  
