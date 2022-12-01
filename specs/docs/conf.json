@@ -1,0 +1,21 @@
+{
+    "plugins": [],
+    "recurseDepth": 10,
+    "source": {
+        "include": ["./source", "./source/webapp", "./source/webapp/customizeRecipe", 
+        "./source/webapp/presetCustomize", 
+        "./source/webapp/presetList", "./source/webapp/reviewRecipe", 
+        "./source/webapp/savedRecipes"],
+        "includePattern": ".+\\.js(doc|x)?$",
+        "excludePattern": "(^|\\/|\\\\)_"
+    },
+    "sourceType": "module",
+    "tags": {
+        "allowUnknownTags": true,
+        "dictionaries": ["jsdoc","closure"]
+    },
+    "templates": {
+        "cleverLinks": false,
+        "monospaceLinks": false
+    }
+}

@@ -1,0 +1,48 @@
+name: JSDoc
+
+on:
+  push:
+    branches:
+      - main
+      - integrate-pipeline
+      - stage
+      
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build
+        uses: andstor/jsdoc-action@v1
+        with:
+          source_dir: ./source
+          output_dir: ./source/docs
+          config_file: ./specs/docs/conf.json
+          template: minami
+          front_page: README.md
+          
+      - name: Setup
+        uses: actions/configure-pages@v2
+        
+      - name: Upload Artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: '/home/runner/work/cse110-fa22-group39/cse110-fa22-group39/source'
+      
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v1

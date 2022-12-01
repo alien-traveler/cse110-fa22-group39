@@ -1,28 +1,28 @@
 # Team Apollo
+
 <img src="branding/Team39-logo.png" width="400" height="400" />
 
-
 ## Branding
+
 <img src="branding/materials.png" width="300" height="300" />
 
-> *Apollo* is a Greek and Roman god of knowledge. 
+> _Apollo_ is a Greek and Roman god of knowledge.
 
-Our team will integrate every member's knowledge and ideas to create and build the project. 
+Our team will integrate every member's knowledge and ideas to create and build the project.
 
 We will make a **Coffee Ordering** web app that allows students to select coffee shops, make orders, and save preferences, because Coffee brings **inspiration and ideas**.
-
 
 ## Values
 
 [Team Intro Video](videos/teamintro.mp4)
+
 > **General Responsibilities**
 >
-> All members must put in their best effort to the work that they are responsible for. 
-> 
-> All members must show mutual respect toward each other in everything related to the group, such as in Slack chat and in their work. 
-> 
+> All members must put in their best effort to the work that they are responsible for.
+>
+> All members must show mutual respect toward each other in everything related to the group, such as in Slack chat and in their work.
+>
 > All members agree to receive a sign-off from one of the team lead before release of any changes to the project.
-
 
 ## Member Roster
 
