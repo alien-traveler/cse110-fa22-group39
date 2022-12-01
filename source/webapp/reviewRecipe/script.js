@@ -16,9 +16,9 @@ function init() {
   const coffeeType = document.getElementById("custom-coffee-name");
   const drinkName = document.getElementById("drink-type-input");
   const drinkSize = document.getElementById("size-type-input");
- // const addOn = document.querySelectorAll("#topping");
+  // const addOn = document.querySelectorAll("#topping");
   const caramel = document.getElementById("caramel");
-  const sugar= document.getElementById("sugar");
+  const sugar = document.getElementById("sugar");
   const extraShort = document.getElementById("extra-short");
   const cream = document.getElementById("cream");
   const water = document.getElementById("water");
