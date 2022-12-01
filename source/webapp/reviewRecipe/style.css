@@ -1,5 +1,5 @@
 #content {
-    width: 600px;
+    /*width: 600px;*/
     margin-top:100px;
     padding-top: 100px;
 }
@@ -54,7 +54,7 @@ label{
   
   .item {
     box-sizing: border-box;
-    width: 700px;
+    width: 450px;
     height: 50px;
   }
   .coffeeShopsItem{
@@ -90,10 +90,11 @@ label{
     vertical-align: middle;
     text-decoration: none;
     font-size: 15px;
-    margin: 10px 220px;
+    /*margin: 10px 220px;*/
     padding: 5px 25px 15px 45px;
     cursor: pointer;
-    margin-top: 100px;
+
+    /*margin-top: 100px;*/
   
 }
 .button:hover{
