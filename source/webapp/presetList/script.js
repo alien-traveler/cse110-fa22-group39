@@ -8,6 +8,7 @@ window.onload = function () {
  * read data of recipes and add events for buttons on preset-recipies.html
  */
 async function init() {
+  localStorage.setItem("Condition", "Create");
   let recipes;
 
   try {

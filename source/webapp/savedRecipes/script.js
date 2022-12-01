@@ -12,6 +12,7 @@ window.onload = function () {
  */
 function init() {
   //add all the saved recipes to the page
+  localStorage.setItem("Condition", "Edit");
   let recipes = getRecipesFromStorage();
   addRecipesToDocument(recipes);
 
