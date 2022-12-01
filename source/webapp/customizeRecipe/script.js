@@ -23,7 +23,7 @@ function init() {
   const cream = document.getElementById("cream");
   const water = document.getElementById("water");
   const milk = document.getElementById("milk");
-  const addOn = [caramel, sugar, extraShort, cream, water, milk];
+  const addOn = [caramel, sugar, extraShort, milk, cream, water];
 
 
   // If there is an index passed in:
