@@ -12,13 +12,12 @@
 
 .button{
     width: 300px;
-    background-color: #573D06;
+    background-color: #fffbf3;
+    color: #573D06;
     border: none;
-    color: #FFFBF3;
     display: flex;
     text-align: center;
     vertical-align: middle;
-    text-decoration: none;
     font-size: 20px;
     margin: 5px 10px;
     padding: 20px 20px 20px 60px;
@@ -26,6 +25,7 @@
 }
   
 .button:hover{
-    background-color: #b38d22;
+    /* background-color: #b38d22; */
+    font-weight: bold;
     color:black;
 }
