@@ -16,14 +16,13 @@ function init() {
   const coffeeType = document.querySelectorAll('[name="coffee-type"]');
   const drinkName = document.getElementById("drinks-name");
   const drinkSize = document.getElementById("size-name");
-  //const addOn = document.getElementById("#topping");
   const caramel = document.getElementById("caramel");
   const sugar = document.getElementById("sugar");
-  const extraShort = document.getElementById("extra-short");
+  const extraShot = document.getElementById("extra-shot");
+  const milk = document.getElementById("milk");
   const cream = document.getElementById("cream");
   const water = document.getElementById("water");
-  const milk = document.getElementById("milk");
-  const addOn = [caramel, sugar, extraShort, cream, water, milk];
+  const addOn = [caramel, sugar, extraShot, cream, water, milk];
 
   // If there is an index passed in:
   // use the 'index' key from localStorage to fetch the
