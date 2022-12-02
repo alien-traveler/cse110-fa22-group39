@@ -16,14 +16,15 @@ function init() {
   const coffeeType = document.getElementById("custom-coffee-name");
   const drinkName = document.getElementById("drink-type-input");
   const drinkSize = document.getElementById("size-type-input");
-  // const addOn = document.querySelectorAll("#topping");
+
   const caramel = document.getElementById("caramel");
   const sugar = document.getElementById("sugar");
-  const extraShort = document.getElementById("extra-short");
+  const extraShot = document.getElementById("extra-shot");
+  const milk = document.getElementById("milk");
   const cream = document.getElementById("cream");
   const water = document.getElementById("water");
-  const milk = document.getElementById("milk");
-  const addOn = [caramel, sugar, extraShort, cream, water, milk];
+  const addOn = [caramel, sugar, extraShot, milk, cream, water];
+  
   let shopEl;
 
   let drinkType = { 1: "Cappuccinos", 2: "Latte", 3: "Espresso" };

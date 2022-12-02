@@ -16,7 +16,7 @@ function init() {
   const coffeeType = document.querySelectorAll('[name="coffee-type"]');
   const drinkName = document.getElementById("drinks-name");
   const drinkSize = document.getElementById("size-name");
-  //const addOn = document.getElementById("#topping");
+
   const caramel = document.getElementById("caramel");
   const sugar = document.getElementById("sugar");
   const extraShort = document.getElementById("extra-short");
