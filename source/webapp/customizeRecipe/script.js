@@ -1,9 +1,7 @@
 window.addEventListener("DOMContentLoaded", init);
-
 window.onload = function () {
   this.loadHome();
 };
-
 /**
  * Load the data of coffee recipe from localStorage, and show them on
  * CustomizeRecipe.html page and users can change their flavor on this
@@ -19,11 +17,11 @@ function init() {
 
   const caramel = document.getElementById("caramel");
   const sugar = document.getElementById("sugar");
-  const extraShort = document.getElementById("extra-short");
+  const extraShot = document.getElementById("extra-shot");
   const cream = document.getElementById("cream");
   const water = document.getElementById("water");
   const milk = document.getElementById("milk");
-  const addOn = [caramel, sugar, extraShort, milk, cream, water];
+  const addOn = [caramel, sugar, extraShot, milk, cream, water];
 
   // If there is an index passed in:
   // use the 'index' key from localStorage to fetch the
@@ -105,7 +103,7 @@ function init() {
       // "addOns" : Index array of all included add-ons:
       //                      0: "Caramel"
       //                      1: "Sugar"
-      //                      2: "Extra Short"
+      //                      2: "Extra Shot"
       //                      3: "Milk"
       //                      4: "Cream"
       //                      5: "Water"
