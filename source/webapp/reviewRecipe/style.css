@@ -1,7 +1,8 @@
 #content {
-    margin-top:100px;
-    padding-top: 100px;
+  margin-top: 200px;
+  padding-top: 200px;
 }
+
 #hot {
   width: 100px;
 }
@@ -17,85 +18,97 @@
 #size-name {
   width: 200px;
 }
-h1{
-    text-align: center;
-    padding-top: 5%;
+
+h1 {
+  text-align: center;
+  padding-top: 5%;
 }
+
 form {
-    width: 500px;
-    margin: auto;
+  width: 500px;
+  margin: auto;
 }
+
 div {
-    margin-bottom: 50px;
-    margin-right: 50px;
+  margin-bottom: 50px;
+  margin-right: 50px;
 }
+
 input {
   background-color: #fffbf3;
   border-style: none;
   font-size: 16px;
+  color: #573d06;
   outline: none;
 }
-label{
+
+label {
   font-size: 20px;
+  color: black;
 }
+
 .container {
-    display: grid;
-    grid-template-columns: 400px 400px 400px;
-    grid-template-rows: auto;
-  
-    box-sizing: border-box;
-    width: 1000px;
-    height: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: center;
-  }
-  
-  .item {
-    box-sizing: border-box;
-    width: 450px;
-    height: 50px;
-  }
-  .coffeeShopsItem{
-    box-sizing: border-box;
-    width: 400px;
-    height: 200px;
-    background-color: #b38d22;
-  }
-  
-  .add-ons{
-    box-sizing: content-box;
-    width: 500px;
-    height: 500px;
-  }
-  .add-on{
-    box-sizing: border-box;
-    margin-top: 100px;
+  display: grid;
+  grid-template-columns: 400px 400px 400px;
+  grid-template-rows: auto;
 
-  }
+  box-sizing: border-box;
+  width: 1000px;
+  height: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+}
 
-  .recipe-name-input{
-    width: 200px;
-  }
-.button{
-    width: 240px;
-    height: 50px;
-    background-color: #573d06;
-    border: none;
-    border-radius: 30px;
-    color: #fffbf3;
-    display: flex;
-    text-align: center;
-    vertical-align: middle;
-    text-decoration: none;
-    font-size: 15px;
-    padding: 5px 25px 15px 45px;
-    cursor: pointer;
+.item {
+  box-sizing: border-box;
+  width: 450px;
+  height: 50px;
 }
-.button:hover{
-    background-color: #b38d22;
-    color:black;
+
+.coffeeShopsItem {
+  box-sizing: border-box;
+  width: 400px;
+  height: 200px;
+  background-color: #b38d22;
 }
+
+.add-ons {
+  box-sizing: content-box;
+  width: 600px;
+  height: 600px;
+}
+
+.add-on {
+  box-sizing: border-box;
+  margin-top: 100px;
+}
+
+.recipe-name-input {
+  width: 200px;
+}
+
+.button {
+  width: 240px;
+  height: 50px;
+  background-color: #573d06;
+  border: none;
+  border-radius: 30px;
+  color: #fffbf3;
+  display: flex;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  font-size: 15px;
+  padding: 5px 25px 15px 45px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #b38d22;
+  color: black;
+}
+
 .caramel {
   margin: auto;
 }
