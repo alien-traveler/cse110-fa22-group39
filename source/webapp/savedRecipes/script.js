@@ -64,13 +64,12 @@ function removeEachRecipes(name) {
 
   localStorage.removeItem(name);
   //update the data from localStorage and push them back
-  if (nameRecipes.length != 0){
+  if (nameRecipes.length != 0) {
     localStorage.setItem("nameRecipes", nameRecipes.toString());
-  }
-  else{
+  } else {
     localStorage.removeItem("nameRecipes");
   }
-  localStorage.setItem("savedRecipes", JSON.stringify(savedArr)); 
+  localStorage.setItem("savedRecipes", JSON.stringify(savedArr));
 }
 
 /**
