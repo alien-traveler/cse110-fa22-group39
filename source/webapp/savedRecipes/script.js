@@ -18,7 +18,6 @@ function init() {
 
   //prevent loading data from preset coffee recipes
   localStorage.removeItem("index");
-  let savedArr = JSON.parse(localStorage.getItem("savedRecipes"));
 
   //add buttons for each coffee recipes
   for (let i = 0; i < recipes.length; i++) {
@@ -30,7 +29,7 @@ function init() {
       localStorage.setItem("savedIndex", i);
     });
     removeButtonEl.addEventListener("click", (event) => {
-      removeEachRecipes(event.target.name, savedArr);
+      removeEachRecipes(event.target.name);
     });
   }
 
@@ -43,8 +42,9 @@ function init() {
  * @param {string} name the name of the recipes
  * @param {array} savedArr all saved recipes array
  */
-function removeEachRecipes(name, savedArr) {
+function removeEachRecipes(name) {
   //defined and set all the needed elements
+  let savedArr = JSON.parse(localStorage.getItem("savedRecipes"));
   let nameRecipes = localStorage.getItem("nameRecipes");
   let tbl = document.querySelector("table");
 
@@ -64,8 +64,13 @@ function removeEachRecipes(name, savedArr) {
 
   localStorage.removeItem(name);
   //update the data from localStorage and push them back
-  localStorage.setItem("nameRecipes", nameRecipes.toString());
-  localStorage.setItem("savedRecipes", JSON.stringify(savedArr));
+  if (nameRecipes.length != 0){
+    localStorage.setItem("nameRecipes", nameRecipes.toString());
+  }
+  else{
+    localStorage.removeItem("nameRecipes");
+  }
+  localStorage.setItem("savedRecipes", JSON.stringify(savedArr)); 
 }
 
 /**
