@@ -5,8 +5,8 @@
   <title>Review Recipes</title>
   <link rel="icon" type="image/x-icon" href="../images/favicon.png">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="../common.css">
-  <script src="../common.js"></script>
+  <link rel="stylesheet" href="/source/webapp/common.css">
+  <script src="/source/webapp/common.js"></script>
   <script src="./script.js"></script>
 </head>
 
@@ -16,7 +16,7 @@
   <div class="container">
     <div class="item">
       <div class="recipe-name">
-        <label for="recipe-name"> Recipe Name </label>
+        <label> Recipe Name </label>
       </div>
     </div>
     <div class="item">
@@ -26,12 +26,12 @@
     </div>
     <div class="item">
       <div class="available-coffee-shops">
-        <label for="available-coffee-shops"> Available Coffee Shops </label>
+        <label> Available Coffee Shops </label>
       </div>
     </div>
     <div class="item">
       <div class="coffee-type">
-        <label for="coffee-type"> Coffee Type </label>
+        <label> Coffee Type </label>
       </div>
     </div>
     <div class="item">
@@ -52,7 +52,7 @@
     </div>
     <div class="item">
       <div class="choose-drink">
-        <label for="choose-drink"> Choose Your Drink </label>
+        <label for="drink-type-input"> Choose Your Drink </label>
       </div>
     </div>
     <div class="item">
@@ -64,7 +64,7 @@
     </div>
     <div class="item">
       <div class="size">
-        <label for="size"> Size </label>
+        <label for="size-type-input"> Size </label>
       </div>
     </div>
     <div class="item">
@@ -75,31 +75,31 @@
     <div class="item">
     </div>
     <div class="add-on">
-      <label for="add-on"> Add-Ons</label>
+      <label> Add-Ons</label>
     </div>
     <div class="add-ons">
       <div class="caramel">
-        <input type="checkbox" id="topping" name="caramel" value="Caramel" onclick="return false" />
+        <input type="checkbox" id="caramel" name="caramel" value="Caramel" onclick="return false" />
         <label for="caramel"> Caramel</label>
       </div>
       <div class="sugar">
-        <input type="checkbox" id="topping" name="sugar" value="Sugar" onclick="return false" />
+        <input type="checkbox" id="sugar" name="sugar" value="Sugar" onclick="return false" />
         <label for="sugar">Sugar </label>
       </div>
-      <div class="extra-short">
-        <input type="checkbox" id="topping" name="extra-short" value="ExtraShort" onclick="return false" />
-        <label for="extra-short">Extra short </label>
+      <div class="extra-shot">
+        <input type="checkbox" id="extra-shot" name="extra-shot" value="ExtraShot" onclick="return false" />
+        <label for="extra-shot">Extra Shot </label>
       </div>
       <div class=milk>
-        <input type="checkbox" id="topping" name="milk" value="Milk" onclick="return false" />
+        <input type="checkbox" id="milk" name="milk" value="Milk" onclick="return false" />
         <label for="milk">Milk </label>
       </div>
       <div class=cream>
-        <input type="checkbox" id="topping" name="cream" value="Cream" onclick="return false" />
+        <input type="checkbox" id="cream" name="cream" value="Cream" onclick="return false" />
         <label for="cream">Cream </label>
       </div>
       <div class=water>
-        <input type="checkbox" id="topping" name="water" value="Water" onclick="return false" />
+        <input type="checkbox" id="water" name="water" value="Water" onclick="return false" />
         <label for="water">Water</label>
       </div>
     </div>

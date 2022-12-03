@@ -1,3 +1,8 @@
+*{
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 .button{
   width: 300px;
   background-color: #fffbf3;
@@ -14,7 +19,7 @@
 }
 
 .button:hover{
-    background-color: #b38d22;
+    font-weight: bold;
     color:black;
 }
 
@@ -44,7 +49,8 @@ div{
   width: 80x; /* Full-width */
   font-size: 16px; /* Increase font-size */
   padding: 12px 20px 12px 40px; /* Add some padding */
-  border: none;/*1px solid #573d06; Add a grey border */
-  margin-left: 80%;
+  border: none;
+  border-radius: 50px;
+  margin-left: 70%;
 }
 
