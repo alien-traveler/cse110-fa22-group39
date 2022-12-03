@@ -154,4 +154,4 @@ function init() {
     localStorage.setItem("review", JSON.stringify(review));
     window.location = "../savedRecipes/savedRecipes.html";
   });
- }
+}
