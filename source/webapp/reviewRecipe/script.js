@@ -24,7 +24,7 @@ function init() {
   const cream = document.getElementById("cream");
   const water = document.getElementById("water");
   const addOn = [caramel, sugar, extraShot, milk, cream, water];
-  
+
   let shopEl;
 
   let drinkType = { 1: "Cappuccinos", 2: "Latte", 3: "Espresso" };
@@ -36,7 +36,7 @@ function init() {
   drinkName.value = drinkType[custome["drinkType"]];
   drinkSize.value = size[custome["size"]];
 
-  //fill the data of addons
+  //fill the data with addons
   const customeAdd = custome["addOns"];
   for (let i = 0; i < customeAdd.length; i++) {
     addOn[customeAdd[i]].checked = true;
