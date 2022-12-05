@@ -23,11 +23,13 @@ function init() {
   for (let i = 0; i < recipes.length; i++) {
     let reviewButtonEl = document.getElementById(`recipe${i}`);
     let removeButtonEl = document.getElementById(`remove${i}`);
+    //jumps to cutomize page when the "view" button is clicked
     reviewButtonEl.addEventListener("click", () => {
       localStorage.setItem("Condition", "Edit");
       window.location = "../customizeRecipe/customizeRecipe.html";
       localStorage.setItem("savedIndex", i);
     });
+    //deletes the recipe when the "delete" button is clicked
     removeButtonEl.addEventListener("click", (event) => {
       removeEachRecipes(event.target.name);
     });
@@ -88,7 +90,7 @@ function getRecipesFromStorage() {
 }
 
 /**
- * add rows to the table on this SavedRecipes.html page for each recipes
+ * Add rows to the table on this SavedRecipes.html page for each recipes
  * @param {array} recipes an array of coffee recipes needed to be added
  * to SavedRecipes.html page
  */
@@ -106,6 +108,10 @@ function addRecipesToDocument(recipes) {
   }
 }
 
+/**
+ * This function is used to create the search bar feature, ie this allows the users 
+ * to search all the saved recipes by the names
+ */
 function lookUp() {
   //define and set all needed variables
   var input, filter, table, tr, td, i, txtValue;
