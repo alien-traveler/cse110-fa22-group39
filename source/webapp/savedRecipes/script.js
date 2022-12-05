@@ -109,7 +109,7 @@ function addRecipesToDocument(recipes) {
 }
 
 /**
- * This function is used to create the search bar feature, ie this allows the users 
+ * This function is used to create the search bar feature, ie this allows the users
  * to search all the saved recipes by the names
  */
 function lookUp() {
