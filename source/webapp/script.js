@@ -20,6 +20,11 @@ async function init() {
   saveButtonEl.addEventListener("click", () => {
     window.location = "./savedRecipes/savedRecipes.html";
   });
+  let aboutButtonEl = document.querySelectorAll("button")[2];
+  //add click event to the button for view the saved recipes
+  aboutButtonEl.addEventListener("click", () => {
+    window.location = "./aboutPage/aboutPage.html";
+  });
 }
 
 /**
