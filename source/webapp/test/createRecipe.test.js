@@ -106,6 +106,11 @@ describe("Test customize recipe", () => {
     ).jsonValue();
     expect(waterCheckboxVal).toBe(false);
 
+    // test available shop
+    expect(
+        await page.evaluate(() => document.getElementById("shopName1").value)
+    ).toBe("Starbucks");
+
     await page.waitForSelector("#content > button");
     await page.click("#content > button");
 
