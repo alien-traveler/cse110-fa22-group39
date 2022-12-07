@@ -14,7 +14,7 @@ function init() {
   //add all the saved recipes to the page
   localStorage.setItem("Condition", "Edit");
   let recipes = getRecipesFromStorage();
-  if (recipes==null){
+  if (recipes == null) {
     return;
   }
   addRecipesToDocument(recipes);
@@ -96,7 +96,7 @@ function getRecipesFromStorage() {
  * to SavedRecipes.html page
  */
 function addRecipesToDocument(recipes) {
-  if (recipes==null){
+  if (recipes == null) {
     return;
   }
   let tbl = document.querySelector("table");
