@@ -108,7 +108,7 @@ describe("Test customize recipe", () => {
 
     // test available shop
     expect(
-        await page.evaluate(() => document.getElementById("shopName1").value)
+      await page.evaluate(() => document.getElementById("shopName1").value)
     ).toBe("Starbucks");
 
     await page.waitForSelector("#content > button");
