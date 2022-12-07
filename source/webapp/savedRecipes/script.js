@@ -14,6 +14,9 @@ function init() {
   //add all the saved recipes to the page
   localStorage.setItem("Condition", "Edit");
   let recipes = getRecipesFromStorage();
+  if (recipes == null) {
+    return;
+  }
   addRecipesToDocument(recipes);
 
   //prevent loading data from preset coffee recipes
@@ -93,6 +96,9 @@ function getRecipesFromStorage() {
  * to SavedRecipes.html page
  */
 function addRecipesToDocument(recipes) {
+  if (recipes == null) {
+    return;
+  }
   let tbl = document.querySelector("table");
   for (var i = 0; i < recipes.length; i++) {
     //add View/Edit and delete button for each recipe

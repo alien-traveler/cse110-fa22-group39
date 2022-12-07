@@ -17,17 +17,16 @@ body {
     height: 50px;
     background-color: #fffbf3;
     border-radius: 20px;
-    color: black;
+    color: #573d06;
     border: none;
     vertical-align: middle;
     font-size: 18px;
-    font-weight: bold;
     cursor: pointer;
     position: absolute;
     left: 0%;
 }
 
 .asText:hover{
-    font-style: italic;
+    font-weight: bold;
     color:black;
 }
