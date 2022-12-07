@@ -19,26 +19,26 @@
 }
 
 .button:hover{
-    font-weight: bold;
-    color:black;
+  font-weight: bold;
+  color:black;
 }
 
 div{
-    width: 600px;
-    background-color: #573d06;
-    color: #fffbf3;
-    display: flex;
-    text-align: center;
-    vertical-align: middle;
-    text-decoration: none;
-    font-size: 20px;
-    margin: 5px 10px;
-    padding: 20px 60px 20px 60px;
+  width: 600px;
+  background-color: #573d06;
+  color: #fffbf3;
+  display: flex;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  font-size: 20px;
+  margin: 5px 10px;
+  padding: 20px 60px 20px 60px;
 }
 
 #page-title{
-    background-color: #fffbf3;
-    color: #573d06;
+  background-color: #fffbf3;
+  color: #573d06;
 }
 
 #input {
