@@ -7,7 +7,7 @@ on:
     branches:
       - main
       - integrate-pipeline
-      - staging
+      - stage
 
 jobs:
   prettier:

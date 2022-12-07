@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Customize recipes</title>
+  <link rel="icon" type="image/x-icon" href="../images/favicon.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../common.css">
+  <script src="../common.js"></script>
+  <script src="script.js"></script>
+</head>
+
+<body>
+  <section id="home"></section>
+  <h1>Time to Customize!</h1>
+  <form id="customize-form">
+    <div class="container">
+      <div class="item">
+        <div class="recipe-name">
+          <label for="name"> Recipe Name </label>
+        </div>
+      </div>
+      <div class="item">
+        <div class="recipe-name-input">
+          <input name="recipe-name" id="name" required />
+        </div>
+      </div>
+      <div class="item">
+        <div class="coffee-type">
+          <label> Coffee Type </label>
+        </div>
+      </div>
+      <div class="item">
+        <input type="radio" id="hot-coffee" name="coffee-type" value="Hot Coffee" required>
+        <label for="hot-coffee" id="hot"> Hot Coffee </label>
+        <input type="radio" id="cold-coffee" name="coffee-type" value="Cold Coffee">
+        <label for="cold-coffee" id="cold"> Cold Coffee </label>
+      </div>
+      <div class="item">
+        <div class="choose-drink">
+          <label for="drinks-name"> Choose Your Drink </label>
+        </div>
+      </div>
+      <div class="item">
+        <select name="choose-drinks" id="drinks-name" required>
+          <option hidden disabled selected value></option>
+          <option value="Cappuccinos">Cappuccinos</option>
+          <option value="Latte">Latte</option>
+          <option value="Espresso">Espresso</option>
+        </select>
+      </div>
+      <div class="item">
+        <div class="size">
+          <label for="size-name"> Size </label>
+        </div>
+      </div>
+      <div class="item">
+        <select name="choose-size" id="size-name" required>
+          <option hidden disabled selected value></option>
+          <option value="S">S</option>
+          <option value="M">M</option>
+          <option value="L">L</option>
+        </select>
+      </div>
+      <div class="add-on">
+        <label> Add-Ons</label>
+      </div>
+      <div class="add-ons">
+        <div class="caramel">
+          <input type="checkbox" id="caramel" name="caramel" value="Caramel" />
+          <label for="caramel"> Caramel</label>
+        </div>
+        <div class="sugar">
+          <input type="checkbox" id="sugar" name="sugar" value="Sugar">
+          <label for="sugar">Sugar </label>
+        </div>
+        <div class="extra-shot">
+          <input type="checkbox" id="extra-shot" name="extra-shot" value="ExtraShot">
+          <label for="extra-shot">Extra Shot </label>
+        </div>
+        <div class=milk>
+          <input type="checkbox" id="milk" name="milk" value="Milk">
+          <label for="milk">Milk </label>
+        </div>
+        <div class=cream>
+          <input type="checkbox" id="cream" name="cream" value="Cream">
+          <label for="cream">Cream </label>
+        </div>
+        <div class=water>
+          <input type="checkbox" id="water" name="water" value="Water">
+          <label for="water">Water</label>
+        </div>
+        <input class="button" type="submit" value="Save and Continue">
+      </div>
+    </div>
+  </form>
+</body>
+
+</html>

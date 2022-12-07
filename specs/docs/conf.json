@@ -2,9 +2,9 @@
     "plugins": [],
     "recurseDepth": 10,
     "source": {
-        "include": ["./source", "./source/test", "./source/webapp", "./source/webapp/CustomizeRecipe", 
-        "./source/webapp/editThePreset", "./source/webapp/preset-customize", 
-        "./source/webapp/preset-list", "./source/webapp/ReviewRecipe", 
+        "include": ["./source", "./source/webapp", "./source/webapp/customizeRecipe", 
+        "./source/webapp/presetCustomize", 
+        "./source/webapp/presetList", "./source/webapp/reviewRecipe", 
         "./source/webapp/savedRecipes"],
         "includePattern": ".+\\.js(doc|x)?$",
         "excludePattern": "(^|\\/|\\\\)_"

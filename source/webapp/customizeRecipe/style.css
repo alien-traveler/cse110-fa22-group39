@@ -1,0 +1,115 @@
+#hot {
+  width: 100px;
+}
+
+#cold {
+  width: 100px;
+}
+
+#drinks-name {
+  width: 200px;
+}
+
+#size-name {
+  width: 200px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 25px;
+  color: #573d06;
+  margin-bottom: 30px;
+}
+
+form {
+  width: 500px;
+  margin: auto;
+}
+
+div {
+  margin-bottom: 50px;
+  margin-right: 50px;
+}
+
+label {
+  font-size: 18px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 400px 400px;
+  grid-template-rows: auto;
+  box-sizing: border-box;
+  width: 500px;
+  height: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  margin-bottom: none;
+}
+
+.item {
+  box-sizing: border-box;
+  width: 700px;
+  height: 50px;
+}
+
+.add-ons {
+  box-sizing: content-box;
+  width: 500px;
+}
+
+.add-on {
+  box-sizing: border-box;
+  margin-top: 100px;
+}
+
+.recipe-name-input {
+  width: 200px;
+}
+
+.button {
+  width: 240px;
+  height: 50px;
+  background-color: #573d06;
+  border: none;
+  border-radius: 30px;
+  color: #fffbf3;
+  display: flex;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  font-size: 15px;
+  margin: 10px 220px;
+  padding: 5px 25px 15px 45px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #b38d22;
+  color: black;
+}
+
+.caramel {
+  margin: auto;
+}
+
+.sugar {
+  margin: auto;
+}
+
+.extra-shot {
+  margin: auto;
+}
+
+.milk {
+  margin: auto;
+}
+
+.cream {
+  margin: auto;
+}
+
+.water {
+  margin: auto;
+}

@@ -2,7 +2,7 @@ name: Codacy Analysis CLI
 
 on:
   push:
-    branches: [ "master", "main", "integrate-pipeline", "staging" ]
+    branches: [ "master", "main", "integrate-pipeline", "stage" ]
 
 jobs:
   codacy-analysis-cli:

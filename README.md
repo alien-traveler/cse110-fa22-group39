@@ -1,3 +1,5 @@
-# Team Page Link:
+# Coffee Recipe Management System
 
-[Click Here for the Team Page](admin/team.md)
+Want some coffee? [Website URL](https://alien-traveler.github.io/cse110-fa22-group39/source/webapp/)
+
+Know more about us: [Team Member Page](admin/team.md)
