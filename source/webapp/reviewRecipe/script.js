@@ -36,7 +36,7 @@ function init() {
   drinkName.value = drinkType[custome["drinkType"]];
   drinkSize.value = size[custome["size"]];
 
-  //fill the data of addons
+  //fill the data with addons
   const customeAdd = custome["addOns"];
   for (let i = 0; i < customeAdd.length; i++) {
     addOn[customeAdd[i]].checked = true;

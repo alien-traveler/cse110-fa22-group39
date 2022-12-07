@@ -1,0 +1,21 @@
+h1 {
+    text-align: center;
+    font-size: 25px;
+    color: #573d06;
+    margin-bottom: 30px;
+}
+
+.content{
+    padding-left: 45%;
+    font-size: 18px;
+    color: black;
+}
+
+p{
+    color:#573d06;
+    font-weight: bold;
+}
+
+#all{
+    padding-left: 8%;
+}
