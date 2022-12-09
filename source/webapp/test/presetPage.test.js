@@ -1,7 +1,7 @@
 describe("check preset recipe1 can fill the input correctly", () => {
   beforeAll(async () => {
     await page.goto(
-      "https://alien-traveler.github.io/cse110-fa22-group39/source/webapp/presetList/presetList.html"
+      "https://alien-traveler.github.io/cse110-fa22-group39/webapp/presetList/presetList.html"
     );
 
     const recipe1Ele = await page.waitForSelector("#recipe1");

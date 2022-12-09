@@ -8,10 +8,10 @@ describe("Test customize recipe", () => {
   beforeAll(async () => {
     // to load shop localStorage
     await page.goto(
-      "https://alien-traveler.github.io/cse110-fa22-group39/source/webapp/"
+      "https://alien-traveler.github.io/cse110-fa22-group39/webapp/"
     );
     await page.goto(
-      "https://alien-traveler.github.io/cse110-fa22-group39/source/webapp/presetCustomize/presetCustomize.html"
+      "https://alien-traveler.github.io/cse110-fa22-group39/webapp/presetCustomize/presetCustomize.html"
     );
 
     await page.click("body > div.row > div.column2 > div > button");
