@@ -38,7 +38,7 @@ describe("check preset recipe1 can fill the input correctly", () => {
     expect(drink).toBe("Espresso");
   });
 
-  it('make sure size is "M', async () => {
+  it('make sure size is "M"', async () => {
     const size = await page.evaluate(
       (x) => x.value,
       await page.waitForXPath('//*[@id="size-name"]')
