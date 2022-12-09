@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: savedRecipes/script.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: savedRecipes/script.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>window.addEventListener("DOMContentLoaded", init);
+window.onload = function () {
+  this.loadHome();
+};
+
+/**
+ * add View/Edit and delete buttons for each recipes in allSavedRecipes
+ * page. For View/Edit button, it will direct to CustomizeRecipe.html
+ * and load the corresponding coffee recipes data into that page. For
+ * delete button, it will remove the corresponding data of coffee recipes
+ * from localStorage, and remove from this page as well.
+ */
+function init() {
+  //add all the saved recipes to the page
+  localStorage.setItem("Condition", "Edit");
+  let recipes = getRecipesFromStorage();
+  if (recipes == null) {
+    return;
+  }
+  addRecipesToDocument(recipes);
+
+  //prevent loading data from preset coffee recipes
+  localStorage.removeItem("index");
+
+  //add buttons for each coffee recipes
+  for (let i = 0; i &lt; recipes.length; i++) {
+    let reviewButtonEl = document.getElementById(`recipe${i}`);
+    let removeButtonEl = document.getElementById(`remove${i}`);
+    //jumps to cutomize page when the "view" button is clicked
+    reviewButtonEl.addEventListener("click", () => {
+      localStorage.setItem("Condition", "Edit");
+      window.location = "../customizeRecipe/customizeRecipe.html";
+      localStorage.setItem("savedIndex", i);
+    });
+    //deletes the recipe when the "delete" button is clicked
+    removeButtonEl.addEventListener("click", (event) => {
+      removeEachRecipes(event.target.name);
+    });
+  }
+
+  scrollable();
+}
+
+/**
+ * Remove the corresponding data of coffee recipes from localStorage if
+ * users click the delete button right after the View/Edit button.
+ * @param {string} name the name of the recipes
+ * @param {array} savedArr all saved recipes array
+ */
+function removeEachRecipes(name) {
+  //defined and set all the needed elements
+  let savedArr = JSON.parse(localStorage.getItem("savedRecipes"));
+  let nameRecipes = localStorage.getItem("nameRecipes");
+  let tbl = document.querySelector("table");
+
+  nameRecipes = nameRecipes.split(",");
+
+  //delete the corresponding data of coffee recipe iteratively
+  for (let i = 0; i &lt; savedArr.length; ++i) {
+    if (savedArr[i]["recipeName"] == name) {
+      //delete data from all saved recipes array
+      savedArr.splice(i, 1);
+      nameRecipes.splice(i, 1);
+      //delete from SavedRecipes.html page
+      tbl.deleteRow(i + 1);
+      break;
+    }
+  }
+
+  localStorage.removeItem(name);
+  //update the data from localStorage and push them back
+  if (nameRecipes.length != 0) {
+    localStorage.setItem("nameRecipes", nameRecipes.toString());
+  } else {
+    localStorage.removeItem("nameRecipes");
+  }
+  localStorage.setItem("savedRecipes", JSON.stringify(savedArr));
+}
+
+/**
+ * Makes the table storing all the saved recipes scrollable
+ */
+function scrollable() {
+  document.querySelector("table").style.overflowY = "scroll";
+}
+
+/**
+ * Get data of coffee recipes whose key is "savedRecipes" from localStorage
+ * @returns {array} an array of all the coffee recipes from localStorage
+ */
+function getRecipesFromStorage() {
+  return JSON.parse(window.localStorage.getItem("savedRecipes"));
+}
+
+/**
+ * Add rows to the table on this SavedRecipes.html page for each recipes
+ * @param {array} recipes an array of coffee recipes needed to be added
+ * to SavedRecipes.html page
+ */
+function addRecipesToDocument(recipes) {
+  if (recipes == null) {
+    return;
+  }
+  let tbl = document.querySelector("table");
+  for (var i = 0; i &lt; recipes.length; i++) {
+    //add View/Edit and delete button for each recipe
+    tbl.insertRow(-1).innerHTML = `&lt;td>&lt;div>${recipes[i].recipeName}&lt;/div>&lt;/td>
+      &lt;td>
+        &lt;button class="button" id="recipe${i}">View/Edit&lt;/button>
+      &lt;/td>
+      &lt;td>
+        &lt;button class="button" id="remove${i}" name = "${recipes[i].recipeName}">Delete&lt;/button>
+      &lt;/td>`;
+  }
+}
+
+/**
+ * This function is used to create the search bar feature, ie this allows the users
+ * to search all the saved recipes by the names
+ */
+function lookUp() {
+  //define and set all needed variables
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("input");
+  filter = input.value.toUpperCase();
+  table = document.querySelector("table");
+  tr = table.getElementsByTagName("tr");
+
+  //when searching, hide the words "All saved recipes"
+  if (filter.length != 0) {
+    tr[0].style.display = "none";
+    //when search bar has no character, display everything
+  } else {
+    for (var i = 0; i &lt; tr.length; i++) {
+      tr[i].style.display = "";
+    }
+  }
+
+  //traverse over all the saved recipes
+  for (var i = 1; i &lt; tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      //get the name of saved recipe
+      txtValue = td.textContent.toUpperCase() || td.innerText.toUpperCase();
+      var match = true;
+      //this "if" make sure the program won't crahsed when overloaded with search
+      if (filter.length &lt;= txtValue.length) {
+        //traverse through all characters in the search bar
+        for (var j = 0; j &lt; filter.length; j++) {
+          //if any character unmatch, hide this recipe
+          if (txtValue[j] != filter[j]) {
+            tr[i].style.display = "none";
+            match = false;
+            break;
+          }
+        }
+        //if every thing matches so far, keep showing this recipe
+        if (match) {
+          tr[i].style.display = "";
+        }
+      }
+    }
+  }
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addRecipesToDocument">addRecipesToDocument</a></li><li><a href="global.html#checkRepeatName">checkRepeatName</a></li><li><a href="global.html#getRecipes">getRecipes</a></li><li><a href="global.html#getRecipesFromStorage">getRecipesFromStorage</a></li><li><a href="global.html#getShops">getShops</a></li><li><a href="global.html#init">init</a></li><li><a href="global.html#loadHome">loadHome</a></li><li><a href="global.html#lookUp">lookUp</a></li><li><a href="global.html#removeEachRecipes">removeEachRecipes</a></li><li><a href="global.html#saveRecipes">saveRecipes</a></li><li><a href="global.html#scrollable">scrollable</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Fri Dec 09 2022 11:11:15 GMT-0800 (Pacific Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

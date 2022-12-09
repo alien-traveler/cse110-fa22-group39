@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: reviewRecipe/script.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: reviewRecipe/script.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>window.addEventListener("DOMContentLoaded", init);
+window.onload = function () {
+  this.loadHome();
+};
+
+/**
+ * load the customize data of this coffee recipe from localStorage in a
+ * JSON object format to review.html page. It is also able to Find
+ * the coffee shops that meet the requirements of the coffee recipe.
+ * Then it checks the repeated names among recipes.
+ */
+function init() {
+  let custome = JSON.parse(localStorage.getItem("custom"));
+
+  const recipeName = document.getElementById("coffee-name");
+  const coffeeType = document.getElementById("custom-coffee-name");
+  const drinkName = document.getElementById("drink-type-input");
+  const drinkSize = document.getElementById("size-type-input");
+
+  const caramel = document.getElementById("caramel");
+  const sugar = document.getElementById("sugar");
+  const extraShot = document.getElementById("extra-shot");
+  const milk = document.getElementById("milk");
+  const cream = document.getElementById("cream");
+  const water = document.getElementById("water");
+  const addOn = [caramel, sugar, extraShot, milk, cream, water];
+
+  let shopEl;
+
+  let drinkType = { 1: "Cappuccinos", 2: "Latte", 3: "Espresso" };
+  let size = { 1: "S", 2: "M", 3: "L" };
+
+  //fill the data to the attributes
+  recipeName.value = custome["recipeName"];
+  coffeeType.value = custome["coffeeType"];
+  drinkName.value = drinkType[custome["drinkType"]];
+  drinkSize.value = size[custome["size"]];
+
+  //fill the data with addons
+  const customeAdd = custome["addOns"];
+  for (let i = 0; i &lt; customeAdd.length; i++) {
+    addOn[customeAdd[i]].checked = true;
+  }
+  const addOnArr = [];
+  for (let i = 0; i &lt; addOn.length; i++) {
+    if (addOn[i].checked) {
+      addOnArr.push(i);
+    }
+  }
+
+  //create JSON object to store a recipe
+  const review = {
+    recipeName: recipeName.value,
+    coffeeType: coffeeType.value,
+    drinkType: custome["drinkType"],
+    size: custome["size"],
+    addOns: addOnArr,
+    availableShop: [],
+  };
+
+  //check shops
+  let shops = JSON.parse(localStorage.getItem("shops"));
+  let numShops = 1;
+  for (let i = 0; i &lt; shops.length; i++) {
+    //meets the requirement
+    if (
+      shops[i]["coffeeType"].includes(coffeeType.value) &amp;&amp;
+      shops[i]["drinkType"].includes(drinkName.value) &amp;&amp;
+      shops[i]["size"].includes(drinkSize.value)
+    ) {
+      review["availableShop"].push(shops[i]["shopName"]);
+      shopEl = document.getElementById(`shopName${numShops}`);
+      shopEl.value = shops[i]["shopName"];
+      numShops++;
+    }
+  }
+
+  const buttonEl = document.querySelector("button");
+  const newRecipe = JSON.stringify(review);
+  const newRecipeName = review.recipeName;
+
+  //save and continue button
+  buttonEl.addEventListener("click", () => {
+    const condition = localStorage.getItem("Condition");
+    if (condition === "Create") {
+      //create recipe
+      let currentNames = localStorage.getItem("nameRecipes");
+      if (currentNames === null) {
+        let newRecipeArray = new Array(newRecipeName);
+        localStorage.setItem("nameRecipes", newRecipeArray.toString());
+      } else {
+        let currentNamesArray = currentNames.split(",");
+        currentNamesArray.push(newRecipeName);
+        localStorage.setItem("nameRecipes", currentNamesArray);
+      }
+
+      localStorage.setItem(newRecipeName, newRecipe);
+
+      let currentRecipes = localStorage.getItem("savedRecipes");
+      if (currentRecipes === null) {
+        let recipeArray = [];
+        recipeArray.push(review);
+        localStorage.setItem("savedRecipes", JSON.stringify(recipeArray));
+      } else {
+        let currentRecipesArray = JSON.parse(currentRecipes);
+        currentRecipesArray.push(review);
+        localStorage.setItem(
+          "savedRecipes",
+          JSON.stringify(currentRecipesArray)
+        );
+      }
+    } else {
+      // edit the recipe
+      const oldName = localStorage.getItem("OldNameEdit");
+      let findName;
+      //Name has been changed
+      if (oldName !== newRecipeName) {
+        findName = oldName;
+        //update nameRecipes
+        let currentNames = localStorage.getItem("nameRecipes");
+        let currentNamesArray = currentNames.split(",");
+        for (const eachName in currentNamesArray) {
+          if (currentNamesArray[eachName] === oldName) {
+            currentNamesArray[eachName] = newRecipeName;
+            break;
+          }
+        }
+        localStorage.setItem("nameRecipes", currentNamesArray);
+
+        //update name-recipe pairs
+        localStorage.removeItem(oldName);
+        localStorage.setItem(newRecipeName, newRecipe);
+      }
+      // Name stays the same
+      else {
+        findName = newRecipeName;
+        //update name-recipe pairs
+        localStorage.setItem(newRecipeName, newRecipe);
+      }
+
+      //update savedRecipes array
+      let currentRecipes = localStorage.getItem("savedRecipes");
+      let currentRecipesArray = JSON.parse(currentRecipes);
+      for (recipe in currentRecipesArray) {
+        const reciName = currentRecipesArray[recipe].recipeName;
+        if (findName === reciName) {
+          currentRecipesArray[recipe] = review;
+          break;
+        }
+      }
+      localStorage.setItem("savedRecipes", JSON.stringify(currentRecipesArray));
+    }
+
+    localStorage.setItem("review", JSON.stringify(review));
+    window.location = "../savedRecipes/savedRecipes.html";
+  });
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addRecipesToDocument">addRecipesToDocument</a></li><li><a href="global.html#checkRepeatName">checkRepeatName</a></li><li><a href="global.html#getRecipes">getRecipes</a></li><li><a href="global.html#getRecipesFromStorage">getRecipesFromStorage</a></li><li><a href="global.html#getShops">getShops</a></li><li><a href="global.html#init">init</a></li><li><a href="global.html#loadHome">loadHome</a></li><li><a href="global.html#lookUp">lookUp</a></li><li><a href="global.html#removeEachRecipes">removeEachRecipes</a></li><li><a href="global.html#saveRecipes">saveRecipes</a></li><li><a href="global.html#scrollable">scrollable</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Fri Dec 09 2022 11:11:15 GMT-0800 (Pacific Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
