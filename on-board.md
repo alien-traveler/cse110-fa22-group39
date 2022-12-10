@@ -2,18 +2,18 @@
 
 ## Structure of our repov (please view in raw):
 
-C:.
+[Github Repo](https://github.com/alien-traveler/cse110-fa22-group39)
 ├───.github
-│ └───workflows
+│ └───workflows            (Github Action Files)
 ├───.idea
 ├───admin
-│ ├───branding
-│ ├───cipipeline
-│ ├───meetings
+│ ├───branding             (Team Branding Material)
+│ ├───cipipeline           (Pipeline Assignments, including video, diagram, docs)
+│ ├───meetings             (All Meeting Minutes)
 │ │ └───sprint-1
-│ ├───misc
-│ └───videos
-├───source
+│ ├───misc                 (Contract for Each Member)
+│ └───videos               (Team Status and Intro Video)
+├───source                 (All the Source Code)
 │ └───webapp
 │ ├───aboutPage
 │ ├───customizeRecipe
@@ -23,13 +23,13 @@ C:.
 │ ├───reviewRecipe
 │ ├───savedRecipes
 │ └───test
-└───specs
-├───adrs
-├───brainstorm
-├───docs
-│ └───out
+└───specs                   
+├───adrs                   (ADR documents)
+├───brainstorm             (Brainstorm material)
+├───docs                    
+│ └───out                  (Javascript documentation)
 │ ├───fonts
 │ ├───scripts
 │ │ └───prettify
 │ └───styles
-└───pitch
+└───pitch                  (Pitch Material)
